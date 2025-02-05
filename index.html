@@ -351,7 +351,7 @@
         // Asegúrate de cerrar el menú desplegable si se hace clic fuera
         $(document).on('click', function(event) {
             if (!$(event.target).closest('.menu li.dropdown').length && !$(event.target).closest('.menu_btn.mobile').length) {
-                closeMenu()
+                // closeMenu()
             }
         });
 
@@ -360,6 +360,7 @@
     function closeMenu(){
         $('.menu').removeClass('open');
         $('.menu_background').removeClass('open');
+        $('.menu_btn.mobile').removeClass('open');
     }
     
     $(document).ready(()=>{
@@ -399,7 +400,7 @@
 
         
         // Event listener for menu items
-        $('nav a').click(function(e){
+        $('nav a').not('.contact-info a').click(function(e){
             e.preventDefault();
             const href = $(this).attr('href');
             const page = href.split('=')[1];
