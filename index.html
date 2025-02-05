@@ -6,829 +6,15 @@
     <title>L´AEREO</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons' rel='stylesheet'/>
     <link crossorigin='anonymous' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' rel='stylesheet'/>
-    <style>
-
-    *{
-        margin: 0;
-        padding: 0;
-        outline: none;
-        -webkit-tap-highlight-color: transparent;
-        /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  */
-        font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif; 
-        box-sizing: border-box;
-    }
-
-    *,
-    *:before,
-    *:after {
-        -webkit-user-select: initial;
-        -khtml-user-select: initial;
-        -moz-user-select: initial;
-        -ms-user-select: initial;
-        user-select: initial;
-    }
-
-    span, i, div {
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    body {
-        overflow-x: hidden;
-        word-break: unset;
-        -webkit-tap-highlight-color: transparent;
-        min-height: 140vh;
-        color: #707070;
-        font-weight: 300;
-        margin: 0;
-    }
-
-    a {
-        text-decoration: inherit;
-        color: white;
-    }
-
-    i {
-        font-style: normal;
-        color: white;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-
-    ::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-        background-color: #ccc;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: grey;
-        border-radius: 8px;
-    }
-
-
-
-    body.dont-scroll { 
-        overflow: hidden; 
-    }
-    :root {
-        --m-primary-color: white;
-        --m-secondary-color: rgb(88 149 200);
-    }
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        transition: background-color 0.3s ease;
-        background: transparent;
-    }
-    .header.scrolled {
-        background: white;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    .header .logo {
-        color: var(--m-secondary-color);
-        width: 100px;
-        margin: 0 20px;
-    }
-    .header nav {
-        padding: 14px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        min-height: 60px;
-        margin: 0 auto;
-    }
-
-    .header nav div{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-    }
-
-    
-
-    .menu_btn{
-        display: none;
-    }
-    .menu_btn{
-        position: absolute;
-        right: 20px;
-        cursor: pointer;
-        width: 20px;
-    }
-
-    /*****/
-    .menu_background.open{
-        background-color: rgb(0 0 0 / 50%);
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-
-
-    .menu_btn.mobile {
-        width: 30px;
-        height: 20px;
-        position: absolute;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2;
-    }
-
-
-
-    .header.scrolled .menu_btn.mobile .line, .header.scrolled .menu_btn.mobile::before, .header.scrolled .menu_btn.mobile::after {
-        background: black;
-    }
-
-    .menu_btn.mobile .line, .menu_btn.mobile::before, .menu_btn.mobile::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background: white; /* Color de las líneas */
-        transition: all 0.3s ease;
-    }
-
-    .menu_btn.mobile::before {
-        top: 10px; /* Ajusta la posición de la línea superior */
-    }
-
-    .menu_btn.mobile::after {
-        top: 20px; /* Ajusta la posición de la línea inferior */
-    }
-
-    .menu_btn.mobile .line {
-        top: 0px; /* La línea del medio */
-    }
-
-    .menu_btn.mobile.open::before {
-        transform: rotate(45deg);
-        top: 20px;
-        background: black !important;
-    }
-
-    .menu_btn.mobile.open::after {
-        transform: rotate(-45deg);
-        top: 20px; 
-        background: black !important;
-    }
-
-    .menu_btn.mobile.open .line {
-        opacity: 0; /* Oculta la línea del medio */
-    }
-
-    /*****/
-
-    .menu {
-        list-style: none;
-        display: flex;
-        gap: 40px;
-    }
-
-    .menu li{
-        line-height: 30px;
-        border-bottom: 1px solid transparent;
-    }
-    
-    .menu li:hover{
-        border-bottom: 1px solid white;
-    }
-
-    .menu li a {
-        color: var(--m-primary-color);
-        text-decoration: none;
-        font-size: 18px;
-        
-    }
-
-    .menu li img {
-        color: white;
-    }
-
-    .header.scrolled nav ul li a{
-        color: black;
-        
-    }
-
-    .header.scrolled img {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg);
-    }
-    .header .contact-button {
-        cursor: pointer;
-        background: var(--m-secondary-color);
-        color: white;
-        padding: 5px 20px;
-        border-radius: 100px;
-        text-decoration: none;
-        margin-right: 20px;
-        transition: background-color 0.3s ease;
-        font-size: 18px;
-        opacity: 0.8;
-    }
-    .header .contact-button:hover {
-        opacity: 0.6;
-    }
-    .carousel {
-        position: relative;
-        overflow: hidden;
-        height: 100dvh;
-        width: 100%;
-    }
-    .carousel ul {
-        display: flex;
-        white-space: nowrap;
-        transition: transform 0.5s;
-        padding: 0;
-        margin: 0;
-        height: 100dvh;
-    }
-    .carousel li {
-        width: 100%;
-        flex: 0 0 auto;
-        height: 100dvh;
-        position: relative;
-        overflow: hidden;
-    }
-    .carousel .img {
-        width: 100%;
-        height: 100dvh;
-        background-size: cover;
-        
-    }
-
-    .carousel .img::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 20%; /* Adjust this value to change the height of the shadow */
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
-        pointer-events: none; /* Ensures clicks go through to the image */
-        z-index: 1; /* To overlay on top of the image */
-    }
-
-    .banner_2 {
-        background-position: 20% 60%;
-    }
-    
-    .carousel-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        z-index: 1;
-    }
-
-    .carousel-text h2 {
-        font-size: 40px;
-        font-weight: 100;
-    }
-
-    .carousel-text p {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .btn{
-        cursor: pointer;
-        color: white;
-        padding: 5px 20px;
-        border-radius: 1000px;
-        border: solid white 1px;
-    }
-
-    .btn.black{
-        color: #707070;
-        border: solid #707070 1px;
-    }
-
-    .btn.black i{
-        color: #707070;
-    }
-
-    .btn-group{
-        display: flex;
-        gap: 10px;
-        margin: 20px;
-    }
-
-    .btn:hover{
-        opacity: 0.7;
-    }
-
-    .carousel-controls {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    .carousel-controls span {
-        /* background: rgba(0,0,0,0.5); */
-        color: white;
-        cursor: pointer;
-    }
-
-    .carousel-controls span:hover {
-        background: rgba(0,0,0,0.5);
-    }
-    .carousel-controls .prev {
-        border-radius: 0 10px 10px 0;
-        padding: 20px; 
-        padding-left: 15px;
-    }
-    .carousel-controls .next {
-        border-radius: 10px 0 0 10px;
-        padding: 20px;
-        padding-right: 15px;
-    }
-    .progress-bars {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 5px;
-    }
-    .progress-bar {
-        cursor: pointer;
-        width: 30px;
-        height: 5px;
-        background: #ccc;  /* Grey background */
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .progress-bar .loading.active{
-        background: white;  /* White progress when active */
-    }
-    .progress-bar .loading {
-        height: 5px;
-        border-radius: 10px;
-    }
-    .content {
-        padding: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-    }
-    .footer {
-        background-color: var(--m-primary-color);
-        color: var(--m-secondary-color);
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-
-    .mobile{
-        display: none !important;
-    }
-
-    @media only screen and (max-width: 768px) {
-
-        .not_mob{
-            display: none !important;
-        }
-        .mobile{
-            display: block !important;
-        }
-
-        .menu {
-            display: none;
-            background: white;
-            list-style: none;
-            display: flex;
-            gap: 0px !important;
-            flex-direction: column;
-            position: fixed;
-            height: 100vh;
-            top: 0;
-            right: -100%;
-            width: 70%;
-            border-radius: 30px 0 0 30px;
-            transition: right 0.3s ease-in-out;
-        }
-
-        .menu.open {
-            right: 0; /* Mueve el menú a la vista */
-            display: flex !important;
-            overflow-y: scroll;
-        }
-
-        .menu li{
-            padding: 20px 0;
-            margin: 0 20px;
-            border-bottom: 1px solid #ccc !important;
-            
-        }
-
-        .menu li:hover{
-            border-bottom: 1px solid #ccc !important;
-        }
-
-        .menu li:first-child{
-            padding-top: 20px;
-            margin-top: 60px;
-        }
-
-        .last_child{
-            margin-bottom: 150px !important;
-            border-bottom: unset !important;
-            
-        }
-
-        .menu li a{
-            color: #000 !important;
-            margin: 20px;
-        }
-
-        .banner_2 {
-            background-position: 25% 50%;
-        }
-
-        .carousel-text h2 {
-            font-size: 3vw;
-        }
-
-        .carousel-text p {
-            font-size: 5vw;
-        }
-
-        .contact-info.mobile{
-            display: flex !important;
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-            width: 100%;
-            padding-bottom: 10px;
-            background-color: white;
-            bottom: 0;
-            position: sticky;
-        }
-
-        .contact-info.mobile a{
-            width: calc(100% - 40px);
-        }
-
-        .contact-info.mobile p{
-            border-radius: 20px;
-            background: #f2f2f2;
-        }
-
-        .menu li.dropdown {
-            position: relative;
-        }
-
-        .menu li.dropdown::after {
-            content: '+'; /* Código Unicode para una flecha hacia abajo */
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 22px;
-            font-weight: 400;
-            transition: transform 0.3s ease;
-        }
-
-        .menu .dropdown-content {
-            display: none !important;
-            /* Ajusta los estilos según sea necesario */
-            padding: 0;
-            z-index: unset;
-        }
-
-        .menu .dropdown-content.open {
-            display: block !important;
-        }
-    }
-
-
-    .services-section {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .services-icons {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 20px 0;
-        margin-top: 10px;
-        background: #f2f2f2;
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    .service-item {
-        flex: 1 1 calc(20% - 20px);
-        min-width: 100px;
-        text-align: center;
-        border-right: 2px #ccc solid;
-    }
-
-    .service-item:last-child{
-        border: unset;
-    }
-
-    .service-item img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .service-item p {
-        margin-top: 5px;
-        font-size: 17px;
-        font-weight: bold;
-    }
-
-    .images-section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .responsive-img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    @media only screen and (max-width: 768px) {
-        .services-icons{
-            gap: 20px;
-            padding: 0;
-            border-radius: unset;
-            background: unset;
-        }
-
-        .service-item {
-            flex: 1 1 80%;
-            display: flex;
-            gap: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border: unset;
-            padding: 20px;
-            background: #f2f2f2;
-            border-radius: 20px;
-        }
-
-        .service-item img{
-            padding-right: 10px;
-            border-right: 2px #ccc solid;
-        }
-    }
-
-    .close {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        font-size: 45px;
-        cursor: pointer;
-        padding: 2px;
-    }
-    </style>
-
-<style>
-    .popup-container {
-        display: none;
-        position: fixed;
-        z-index: 1001;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.4);
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .popup-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        width: 80%;
-        max-width: 400px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .close-popup {
-        position: absolute;
-        top: 5px;
-        right: 15px;
-        font-size: 34px;
-        cursor: pointer;
-    }
-    
-    .contact-info p {
-        color: #707070;
-        cursor: pointer;
-        margin: 10px 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        padding: 20px;
-        border-radius: 8px;
-    }
-    
-    .contact-info i {
-        color: #707070;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown:hover {
-        border: unset !important;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        color: #707070;
-        min-width: 220px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        border-radius: 10px;
-        padding: 10px;
-        top: 30px;
-    }
-
-    .dropdown-content li {
-        list-style-type: none;
-    }
-
-    .dropdown-content li a {
-        color: #707070  !important;
-        padding: 8px 14px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        font-weight: 400;
-        font-size: 15px;
-    }
-
-    .dropdown-content li a:hover {
-        color: #006aba !important;
-        font-weight: 400;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    /* Para mantener el menú abierto al hacer clic */
-    .dropdown-content {
-        display: none;
-    }
-
-    .dropdown.open .dropdown-content {
-        display: block;
-    }
-
-@media only screen and (max-width: 768px) {
-    .dropdown-content {
-        display: block;
-    }
-
-    .dropdown-content{
-        position: relative;
-        box-shadow: unset;
-    }
-
-    .dropdown-content li:first-child {
-        margin: 0;
-        padding: 0;
-    }
-
-    .dropdown-content li {
-        margin: 0;
-        padding: 0;
-    }
-
-    .dropdown-content li a {
-        margin: 0;
-    }
-}
-
-/**************************************************************
-SERVICES
-*************************************************************/
-#content{
-    max-width: 1200px;
-    
-    margin: auto;
-}
-#section-image{
-    margin-top: 60px;
-    width: 100%;
-    min-height: 200px;
-    object-fit: cover;
-}
-
-#content .banner{
-    position: relative;
-}
-
-#content .banner::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    left: 0;
-    right: 0;
-    height: 100px; /* Height of the gradient, adjust as needed */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* Gradient from transparent to black */
-    pointer-events: none; /* Makes sure the gradient doesn't interfere with clicks */
-    z-index: 1; /* Place above the image but below the text */
-}
-
-#content .banner .info{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 20px;
-    color: white;
-    z-index: 2;
-}
-
-#content .text{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-#content .text .list{
-    width: 90vw;
-    max-width: 600px;
-}
-
-#content .text .lateral{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.card-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    margin-top: 20px;
-}
-
-.card {
-    background: #f2f2f2;
-    color: #333333;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-</style>
+    <link href='./styles/main.css' rel='stylesheet'/>
+    <link href='./styles/pop_up.css' rel='stylesheet'/>
+    <link href='./styles/services.css' rel='stylesheet'/>
 </head>
 <body>
     <header class="header">
         <nav>
             <div>
-                <img class="logo" src="./src/LOGO_LAEREO.svg"/>
+                <img class="logo" src="./assets/LOGO_LAEREO.svg"/>
                 <div class="menu_btn mobile">
                     <div class="line"></div>
                 </div>
@@ -847,10 +33,10 @@ SERVICES
                     <li><a href="?page=habilitaciones">Habilitaciones</a></li>
                     <li class="last_child"><a href="?page=galeria">Galería</a></li>
                     <div class="contact-info mobile">
-                        <a href="tel:+543541548995"><p><img src="./src/telefono.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> +54 3541 54-8995</p></a>
-                        <a href="mailto:tarlaareo@gmail.com"><p><img src="./src/mail.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> tarlaareo@gmail.com</p></a>
-                        <a href="https://www.facebook.com/LaereoTallerAeronautico" target="_blank"><p><img src="./src/facebook.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> L'aereo Taller Aeronáutico</p></a>
-                        <a href="https://www.instagram.com/tarlaereo" target="_blank"><p><img src="./src/insta.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> @tarlaereo</p></a>
+                        <a href="tel:+543541548995"><p><img src="./assets/icons/telefono.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> +54 3541 54-8995</p></a>
+                        <a href="mailto:tarlaareo@gmail.com"><p><img src="./assets/icons/mail.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> tarlaareo@gmail.com</p></a>
+                        <a href="https://www.facebook.com/LaereoTallerAeronautico" target="_blank"><p><img src="./assets/icons/facebook.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> L'aereo Taller Aeronáutico</p></a>
+                        <a href="https://www.instagram.com/tarlaereo" target="_blank"><p><img src="./assets/icons/insta.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> @tarlaereo</p></a>
                     </div>
                 </ul>
             </div>
@@ -862,7 +48,7 @@ SERVICES
     <div class="carousel">
         <ul aria-live="polite" aria-atomic="true">
             <li>
-                <div class="img banner_2" alt="Slide 1" style="background-image: url('./src//BANNER_1.webp')">
+                <div class="img banner_2" alt="Slide 1" style="background-image: url('./assets//BANNER_1.webp')">
                 <div class="carousel-text">
                     <h2 style="font-style: oblique"><strong>SEGURIDAD</strong> Y PRESICIÓN</h2>
                     <p>EN CADA VUELO</p>
@@ -872,7 +58,7 @@ SERVICES
                 </div>
             </li>
             <li>
-                <div class="img" alt="Slide 1" style="background-image: url('./src//BANNER_1.webp')">
+                <div class="img" alt="Slide 1" style="background-image: url('./assets//BANNER_1.webp')">
                 <div class="carousel-text">
                     <h2>LOREM IPSUM</h2>
                     <p><strong>AIRCRAFT</strong> MAINTENANCE</p>
@@ -883,7 +69,7 @@ SERVICES
                 </div>
             </li>
             <li>
-                <div class="img" alt="Slide 1" style="background-image: url('./src//BANNER_1.webp')">
+                <div class="img" alt="Slide 1" style="background-image: url('./assets//BANNER_1.webp')">
                 <div class="carousel-text">
                     <h2>LOREM IPSUM</h2>
                     <p><strong>AIRCRAFT</strong> MAINTENANCE</p>
@@ -917,15 +103,15 @@ SERVICES
             <h2 style="font-weight: 300; font-size: 25px;">MÁS DE 25 AÑOS<br><strong>DE EXPERIENCIA INTERNACIONAL</strong><br> EN MANTENIMIENTO AERONÁUTICO</h2>
             <h3 style="margin-top: 30px; text-align: left;">Servicios</h3>
             <div class="services-icons">
-                <div class="service-item"><img src="./src/home_icons/mantenimiento.svg" alt="Mantenimiento"><p>Mantenimiento</p></div>
-                <div class="service-item"><img src="./src/home_icons/avionica.svg" alt="Aviónica"><p>Aviónica</p></div>
-                <div class="service-item"><img src="./src/home_icons/motores.svg" alt="Motores"><p>Motores y Accesorios</p></div>
-                <div class="service-item"><img src="./src/home_icons/repuestos.svg" alt="Repuestos"><p>Repuestos</p></div>
-                <div class="service-item"><img src="./src/home_icons/reparaciones.svg" alt="Reparaciones"><p>Reparaciones Estructurales</p></div>
+                <div class="service-item"><img src="./assets/home_icons/mantenimiento.svg" alt="Mantenimiento"><p>Mantenimiento</p></div>
+                <div class="service-item"><img src="./assets/home_icons/avionica.svg" alt="Aviónica"><p>Aviónica</p></div>
+                <div class="service-item"><img src="./assets/home_icons/motores.svg" alt="Motores"><p>Motores y Accesorios</p></div>
+                <div class="service-item"><img src="./assets/home_icons/repuestos.svg" alt="Repuestos"><p>Repuestos</p></div>
+                <div class="service-item"><img src="./assets/home_icons/reparaciones.svg" alt="Reparaciones"><p>Reparaciones Estructurales</p></div>
             </div>
             <div class="images-section">
-                <img src="./src/BANNER_1.webp" alt="Imagen 1" class="responsive-img">
-                <img src="./src/BANNER_1.webp" alt="Imagen 2" class="responsive-img">
+                <img src="./assets/BANNER_1.webp" alt="Imagen 1" class="responsive-img">
+                <img src="./assets/BANNER_1.webp" alt="Imagen 2" class="responsive-img">
             </div>
         </div>
     </div>
@@ -934,15 +120,15 @@ SERVICES
         <div class="popup-content">
             <span class="close-popup">&times;</span>
             <div style="display: flex; align-items: center; gap: 7px;">
-                <img src="./src/contactos.svg" width="15px"/>
+                <img src="./assets/icons/contactos.svg" width="15px"/>
                 <h3>Contacto</h3>
             </div>
             
             <div class="contact-info">
-                <a href="tel:+543541548995"><p><img src="./src/telefono.svg" width="20px"/> +54 3541 54-8995</p></a>
-                <a href="mailto:tarlaareo@gmail.com"><p><img src="./src/mail.svg" width="20px"/> tarlaareo@gmail.com</p></a>
-                <a href="https://www.facebook.com/LaereoTallerAeronautico" target="_blank"><p><img src="./src/facebook.svg" width="20px"/> L'aereo Taller Aeronáutico</p></a>
-                <a href="https://www.instagram.com/tarlaereo" target="_blank"><p><img src="./src/insta.svg" width="20px"/> @tarlaereo</p></a>
+                <a href="tel:+543541548995"><p><img src="./assets/icons/telefono.svg" width="20px"/> +54 3541 54-8995</p></a>
+                <a href="mailto:tarlaareo@gmail.com"><p><img src="./assets/icons/mail.svg" width="20px"/> tarlaareo@gmail.com</p></a>
+                <a href="https://www.facebook.com/LaereoTallerAeronautico" target="_blank"><p><img src="./assets/icons/facebook.svg" width="20px"/> L'aereo Taller Aeronáutico</p></a>
+                <a href="https://www.instagram.com/tarlaereo" target="_blank"><p><img src="./assets/icons/insta.svg" width="20px"/> @tarlaereo</p></a>
             </div>
         </div>
     </div>
@@ -950,7 +136,7 @@ SERVICES
     <div id="content">
         <!-- This is where content will dynamically load -->
         <div class="banner">
-            <img id="section-image" src="./src/services/services_banner.webp" alt="">
+            <img id="section-image" src="./assets/services/services_banner.webp" alt="">
             <div class="info">
                 <h1 id="section-title"></h1>
                 <div id="breadcrumbs"></div>
@@ -966,7 +152,7 @@ SERVICES
                     <div class="btn black consultar"><i class="fab fa-whatsapp"></i> Consultar</div>
                     <div class="btn black llamar"><i class="fas fa-phone"></i> Llamar</div>
                 </div>
-                <img src="./src/services/avion.webp" width="260px">
+                <img src="./assets/services/avion.webp" width="260px" style="margin-bottom: 50px;">
             </div>
         </div>
         
@@ -1183,14 +369,14 @@ SERVICES
             
             
             const contentMap = {
-                'mantenimiento': { title: 'Mantenimiento', bread: 'Servicios', image: './src/BANNER_1.webp'},
-                'avionica': { title: 'Aviónica', bread: 'Servicios', image: './src/BANNER_1.webp', text: 'Descripción de Aviónica' },
-                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', image: './src/BANNER_1.webp', text: 'Descripción de Motores' },
-                'repuestos': { title: 'Repuestos', bread: 'Servicios', image: './src/BANNER_1.webp', text: 'Descripción de Repuestos' },
-                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', image: './src/BANNER_1.webp', text: 'Descripción de Reparaciones' },
-                'quienes-somos': { title: 'Quiénes Somos', image: './src/BANNER_1.webp', text: 'Sobre nosotros' },
-                'habilitaciones': { title: 'Habilitaciones', image: './src/BANNER_1.webp', text: 'Nuestras habilitaciones' },
-                'galeria': { title: 'Galería', image: './src/BANNER_1.webp', text: 'Fotos de nuestro trabajo' }
+                'mantenimiento': { title: 'Mantenimiento', bread: 'Servicios', image: './assets/BANNER_1.webp'},
+                'avionica': { title: 'Aviónica', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Aviónica' },
+                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Motores' },
+                'repuestos': { title: 'Repuestos', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Repuestos' },
+                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Reparaciones' },
+                'quienes-somos': { title: 'Quiénes Somos', image: './assets/BANNER_1.webp', text: 'Sobre nosotros' },
+                'habilitaciones': { title: 'Habilitaciones', image: './assets/BANNER_1.webp', text: 'Nuestras habilitaciones' },
+                'galeria': { title: 'Galería', image: './assets/BANNER_1.webp', text: 'Fotos de nuestro trabajo' }
             };
 
             if (contentMap[page]) {
