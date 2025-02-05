@@ -1,36 +1,32 @@
 //node build/public.js
+const execProcess = require("./exec_process.js");
 
-function public(){
-    //ejecutamos la subida de fotos en git
-    var execProcess = require("./exec_process.js");
-    
-    execProcess.result("git add index.html", function(err, response){
-        if(!err){
-            console.log(response);
-        }else {
-            console.log(err);
+function runCommand(command, callback) {
+    execProcess.result(command, function (err, response) {
+        if (err) {
+            console.log(`Error ejecutando "${command}":`, err);
+        } else {
+            console.log(`Salida de "${command}":`, response);
         }
+        callback(err);
     });
-    execProcess.result("git add .\\assets\\", function(err, response){
-        if(!err){
-            console.log(response);
-        }else {
-            console.log(err);
-        }
-    });
-    execProcess.result("git add .\\styles\\", function(err, response){
-        if(!err){
-            console.log(response);
-        }else {
-            console.log(err);
-        }
-    });
-    execProcess.result("git commit -m \"public src\" && git push -u origin main", function(err, response){
-        if(!err){
-            console.log(response);
-        }else {
-            console.log(err);
-        }
+}
+
+function public() {
+    runCommand("git add index.html", (err) => {
+        if (err) return;
+        runCommand("git add .\\assets\\", (err) => {
+            if (err) return;
+            runCommand("git add .\\styles\\", (err) => {
+                if (err) return;
+                runCommand('git commit -m "public"', (err) => {
+                    if (err) return;
+                    runCommand("git push -u origin main", (err) => {
+                        if (err) console.log("Error al hacer push:", err);
+                    });
+                });
+            });
+        });
     });
 }
 
