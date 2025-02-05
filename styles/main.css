@@ -163,7 +163,10 @@ body {
     gap: 20px;
 }
 
-
+.ops{
+    display: flex;
+    gap: 30px;
+}
 
 .menu_btn{
     display: none;
@@ -256,6 +259,10 @@ body {
 
 .menu li:hover{
     border-bottom: 1px solid white;
+}
+
+.header.scrolled li:not(.dropdown li):hover {
+    border-bottom: 1px solid black;
 }
 
 .menu li a {
@@ -492,6 +499,7 @@ body {
         margin-top: 60px;
         overflow-y: scroll;
         padding: 0 20px;
+        display: unset;
     }
 
     .menu li{
