@@ -226,13 +226,13 @@ body {
 
 .menu_btn.mobile.open::before {
     transform: rotate(45deg);
-    top: 20px;
+    top: 0px;
     background: black !important;
 }
 
 .menu_btn.mobile.open::after {
     transform: rotate(-45deg);
-    top: 20px; 
+    top: 0px; 
     background: black !important;
 }
 
@@ -243,6 +243,7 @@ body {
 /*****/
 
 .menu {
+    position: relative;
     list-style: none;
     display: flex;
     gap: 40px;
@@ -440,6 +441,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 100px;
 }
 .footer {
     background-color: var(--m-primary-color);
@@ -483,23 +485,23 @@ body {
     .menu.open {
         right: 0; /* Mueve el menú a la vista */
         display: flex !important;
+    }
+
+    .menu .ops{
+        width: calc(100% - 40px);
+        margin-top: 60px;
         overflow-y: scroll;
+        padding: 0 20px;
     }
 
     .menu li{
         padding: 20px 0;
-        margin: 0 20px;
         border-bottom: 1px solid #ccc !important;
-        
+        width: 100%;
     }
 
     .menu li:hover{
         border-bottom: 1px solid #ccc !important;
-    }
-
-    .menu li:first-child{
-        padding-top: 20px;
-        margin-top: 60px;
     }
 
     .last_child{
