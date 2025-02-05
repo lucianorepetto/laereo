@@ -414,7 +414,7 @@ body {
         gap: 0px !important;
         flex-direction: column;
         position: fixed;
-        height: 100vh;
+        height: 100dvh;
         top: 0;
         right: -100%;
         width: 70%;
