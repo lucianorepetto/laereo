@@ -661,6 +661,11 @@ body {
         padding-right: 10px;
         border-right: 2px #ccc solid;
     }
+
+    .xp{
+        scale: 1 !important;
+    }
+
 }
 
 .close {
@@ -671,3 +676,4 @@ body {
     cursor: pointer;
     padding: 2px;
 }
+
