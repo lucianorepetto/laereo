@@ -677,6 +677,10 @@ body {
         scale: 1 !important;
     }
 
+    .header nav div{
+        justify-content: unset;
+    }
+
 }
 
 .close {
