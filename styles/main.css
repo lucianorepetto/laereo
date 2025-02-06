@@ -505,13 +505,18 @@ body {
         display: unset;
     }
 
-    .menu li{
+    .menu li:not(.dropdown li){
         padding: 20px 0;
         border-bottom: 1px solid #ccc !important;
         width: 100%;
     }
 
-    .menu li:hover{
+    .dropdown li{
+        width: 80%;
+        margin-left: 20px !important;
+    }
+
+    .menu li:not(.dropdown li):hover{
         border-bottom: 1px solid #ccc !important;
     }
 
