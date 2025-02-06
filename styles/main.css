@@ -669,6 +669,10 @@ body {
         border-right: 2px #ccc solid;
     }
 
+    .service-item p{
+        margin: 0;
+    }
+
     .xp{
         scale: 1 !important;
     }
