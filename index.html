@@ -30,6 +30,7 @@
                                 <li><a href="?page=motores">Motores y Accesorios</a></li>
                                 <li><a href="?page=repuestos">Repuestos</a></li>
                                 <li><a href="?page=reparaciones">Reparaciones Estructurales</a></li>
+                                <li><a href="?page=inspecciones">Inspecciones Pre-Compra y Venta de Aeronaves</a></li>
                             </ul>
                         </li>
                         <li><a href="?page=quienes-somos">Quiénes Somos</a></li>
@@ -106,7 +107,7 @@
     
     <div class="content">
         <div class="services-section">
-            <h2 class="xp" style="font-weight: 300; font-size: 16px; white-space: nowrap; margin-top: 10px; scale: 1.5;">MÁS DE 25 AÑOS<br><strong style="font-size: 20px; font-style: oblique;">DE EXPERIENCIA INTERNACIONAL</strong><br> EN MANTENIMIENTO AERONÁUTICO</h2>
+            <h2 class="xp" style="font-weight: 300; font-size: 16px; white-space: nowrap; margin: 40px; scale: 1.5; max-width: 1200px;">MÁS DE 25 AÑOS<br><strong style="font-size: 20px; font-style: oblique;">DE EXPERIENCIA INTERNACIONAL</strong><br> EN MANTENIMIENTO AERONÁUTICO</h2>
             <h3 style="margin-top: 30px; text-align: left;">Servicios</h3>
             <div class="services-icons">
                 <div class="service-item"><img src="./assets/home_icons/mantenimiento.svg" alt="Mantenimiento"><p>Mantenimiento</p></div>
@@ -377,13 +378,14 @@
             
             const contentMap = {
                 'mantenimiento': { title: 'Mantenimiento', bread: 'Servicios', image: './assets/BANNER_1.webp'},
-                'avionica': { title: 'Aviónica', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Aviónica' },
-                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Motores' },
-                'repuestos': { title: 'Repuestos', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Repuestos' },
-                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', image: './assets/BANNER_1.webp', text: 'Descripción de Reparaciones' },
-                'quienes-somos': { title: 'Quiénes Somos', image: './assets/BANNER_1.webp', text: 'Sobre nosotros' },
-                'habilitaciones': { title: 'Habilitaciones', image: './assets/BANNER_1.webp', text: 'Nuestras habilitaciones' },
-                'galeria': { title: 'Galería', image: './assets/BANNER_1.webp', text: 'Fotos de nuestro trabajo' }
+                'avionica': { title: 'Aviónica', bread: 'Servicios', image: './assets/BANNER_1.webp'},
+                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', image: './assets/BANNER_1.webp'},
+                'repuestos': { title: 'Repuestos', bread: 'Servicios', image: './assets/BANNER_1.webp'},
+                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', image: './assets/BANNER_1.webp'},
+                'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', image: './assets/BANNER_1.webp'},
+                'quienes-somos': { title: 'Quiénes Somos', image: './assets/BANNER_1.webp'},
+                'habilitaciones': { title: 'Habilitaciones', image: './assets/BANNER_1.webp'},
+                'galeria': { title: 'Galería', image: './assets/BANNER_1.webp'}
             };
 
             if (contentMap[page]) {

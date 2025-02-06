@@ -615,7 +615,8 @@ body {
 }
 
 .service-item img {
-    width: 50px;
+    width: 80px;
+    flex: 0 0 80px;
     height: 50px;
 }
 
