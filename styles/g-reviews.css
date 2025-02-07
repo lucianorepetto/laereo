@@ -1,0 +1,68 @@
+
+  
+  /* Contenedor de las reviews */
+  .google-reviews .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    position: relative;
+    overflow-x: scroll;
+    padding: 15px;
+  }
+
+ .google-reviews h2{
+    margin-top: 20px;
+    text-align: left;
+    font-style: oblique
+  }
+
+  
+  /* Estilo para cada review */
+  .review {
+    background: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    flex: 0 0 180px;
+    width: 260px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 20px;
+  }
+  
+  /* Nombre del usuario */
+  .google-reviews p strong {
+    font-size: 16px;
+    color: #444;
+  }
+  
+  /* Estilo para el rating */
+  .google-reviews p:nth-child(2) {
+    font-weight: bold;
+    color: #f39c12;
+  }
+  
+  /* Texto de la reseña */
+  .google-reviews p:nth-child(3) {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Responsive */
+  /* @media (max-width: 600px) {
+    #google-reviews {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #google-reviews div {
+      width: 90%;
+    }
+  } */
+  

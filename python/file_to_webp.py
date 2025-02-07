@@ -77,6 +77,6 @@ def convert_to_mp4(root_dir):
 
 raiz = os.path.join(os.path.dirname(__file__), '..', 'assets')
 # raiz = 'C:/Users/lucia/OneDrive/Documentos/Mis Documentos/Pages/AdimensionalShopV3/src/images'
-convert_to_webp(raiz)
-# convert_to_mp4(raiz)
+# convert_to_webp(raiz)
+convert_to_mp4(raiz)
 # convert_just_one_folder(raiz)

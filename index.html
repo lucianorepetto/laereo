@@ -9,6 +9,7 @@
     <link href='./styles/main.css' rel='stylesheet'/>
     <link href='./styles/pop_up.css' rel='stylesheet'/>
     <link href='./styles/services.css' rel='stylesheet'/>
+    <link href='./styles/g-reviews.css' rel='stylesheet'/>
 </head>
 <body>
     <header class="header">
@@ -101,8 +102,12 @@
     
     <div class="content">
         <div class="services-section">
-            <h2 class="xp" style="font-weight: 300; font-size: 16px; white-space: nowrap; margin: 40px; scale: 1.5; max-width: 1200px;">MÁS DE 25 AÑOS<br><strong style="font-size: 20px; font-style: oblique;">DE EXPERIENCIA INTERNACIONAL</strong><br> EN MANTENIMIENTO AERONÁUTICO</h2>
-            <h3 style="margin-top: 30px; text-align: left;">Servicios</h3>
+            <h2 class="xp">
+                MÁS DE 25 AÑOS
+                <strong>DE EXPERIENCIA INTERNACIONAL</strong>
+                EN MANTENIMIENTO AERONÁUTICO
+            </h2>
+            <h3 style="margin-top: 30px; text-align: left;font-style: oblique">Servicios</h3>
             <div class="services-icons">
                 <div class="service-item"><img src="./assets/home_icons/mantenimiento.svg" alt="Mantenimiento"><p>Mantenimiento</p></div>
                 <div class="service-item"><img src="./assets/home_icons/avionica.svg" alt="Aviónica"><p>Aviónica</p></div>
@@ -111,10 +116,27 @@
                 <div class="service-item"><img src="./assets/home_icons/reparaciones.svg" alt="Reparaciones"><p>Reparaciones Estructurales</p></div>
             </div>
             <div class="images-section">
-                <img src="./assets/images/image_1.webp" alt="Imagen 1" class="responsive-img">
-                <img src="./assets/images/image_2.webp" alt="Imagen 2" class="responsive-img">
+                <div class="video_container">
+                    <video src="./assets/videos/home_video.mp4" autoplay muted loop></video>
+                    <div class="text">
+                        <div>DONDE LA <strong>PRESICIÓN</strong> Y</div>
+                        <div>LA <strong>EXCELENCIA</strong> SE ENCUENTRAN</div>
+                        <div class="btn">VER GALERÍA</div>
+                    </div>
+                    
+                </div>
+                
+                </video>
+
             </div>
         </div>
+
+        <div class="google-reviews">
+            <h2>Reseñas de nuestros clientes</h2>
+            <div class="container mini-scroll-horizontal"></div>
+        </div>
+
+        
     </div>
 
     <div id="contactPopup" class="popup-container">
@@ -161,6 +183,7 @@
         
         <div id="inner-content"></div>
     </div>
+
 
     <div class="mantenimiento" style="display: none;">
         <div class="card-container">
@@ -209,9 +232,27 @@
           
     </div>
 
-    <!-- <footer class="footer">
-        <p>© 2023 DJI Clone</p>
-    </footer> -->
+
+    <div class="marcas">
+        <h2>Marcas</h2>
+        <div class="background">
+            <div class="container mini-scroll-horizontal">
+                <img src="./assets/marcas/BEECHCRAFT.webp">
+                <img src="./assets/marcas/CESSNA.webp">
+                <img src="./assets/marcas/CIRRUS.webp">
+                <img src="./assets/marcas/CONTINENTAL.webp">
+                <img src="./assets/marcas/LYCOMING.webp">
+                <img src="./assets/marcas/MOONEY.webp">
+                <img src="./assets/marcas/PIPER.webp">
+                <img src="./assets/marcas/PIPISTREL.webp">
+                <img src="./assets/marcas/TECNAM.webp">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 L´AEREO</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -467,5 +508,47 @@
     }
 
     </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQgsn27h-mpjdG-pA_vfGjCGXj_-75TD8&libraries=places"></script>
+    <script>
+        function fetchGoogleReviews() {
+            const placeId = "ChIJa1cnYVW7MpQROzTImwUHtGI";
+            const map = new google.maps.Map(document.createElement('div'));
+            const service = new google.maps.places.PlacesService(map);
+            const request = {
+                placeId: placeId,
+                fields: ['review']
+            };
+            service.getDetails(request, function (place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                const $reviewsContainer = $('.google-reviews .container');
+                place.reviews.forEach(review => {
+                    // Crear el contenedor de estrellas
+                    let starsHtml = '';
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= review.rating) {
+                            starsHtml += '<span class="star" style="color: gold;">&#9733;</span>'; // Estrella dorada
+                        } else {
+                            starsHtml += '<span class="star" style="color: gray;">&#9733;</span>'; // Estrella gris
+                        }
+                    }
+                    
+                    const $reviewElement = $(`
+                        <div class="review">
+                            <p>${starsHtml}</p>
+                            <p><strong>${review.author_name}</strong></p>
+                            <p>${review.text}</p>
+                        </div>
+                    `);
+                    $reviewsContainer.append($reviewElement);
+                });
+            }
+        });
+
+
+        }
+        document.addEventListener('DOMContentLoaded', fetchGoogleReviews);
+    </script>
+
 </body>
 </html>
