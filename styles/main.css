@@ -591,7 +591,7 @@ body {
 .marcas h2{
     margin: 0 auto;
     margin-bottom: 10px;
-    margin-left: 20px;
+    padding-left: 20px;
     max-width: 1200px;
     font-style: oblique
 }
