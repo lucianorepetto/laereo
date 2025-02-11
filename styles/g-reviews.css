@@ -10,6 +10,7 @@
     position: relative;
     overflow-x: scroll;
     padding: 15px;
+    max-width: 830px;
   }
 
  .google-reviews h2{
@@ -63,7 +64,7 @@
 .summary{
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 .review {
@@ -80,12 +81,7 @@
 
 /* Estilos para el resumen de calificaciones */
 .Bd93Zb {
-  margin-top: 30px;
-  width: 200px;
-}
-
-.ExlQHd {
-  margin-top: 20px;
+  width: 170px;
 }
 
 table {
@@ -141,7 +137,6 @@ table {
 
 /* Estilo de la parte de la calificación */
 .jANrlb {
-  margin-top: 20px;
   text-align: center;
 }
 
@@ -180,11 +175,6 @@ table {
 .review strong {
   font-size: 16px;
   color: #333;
-}
-
-/* Asegurarse que los contenedores estén alineados correctamente */
-table, .jANrlb {
-  margin-top: 20px;
 }
 
 .star-container {
