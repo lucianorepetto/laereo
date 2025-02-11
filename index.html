@@ -628,8 +628,8 @@
                     let totalReviews = reviews.length;
                     let summaryHtml = `
                         <div class="jANrlb ">
-                            <div class="fontDisplayLarge">4.7</div>
-                            <div role="img" class="YTkVxc" aria-label="4.7 stars">
+                            <div class="fontDisplayLarge"></div>
+                            <div role="img" class="YTkVxc">
                                 <div class="qxPNJf"></div>
                                 <div class="qxPNJf"></div>
                                 <div class="qxPNJf"></div>
@@ -645,7 +645,10 @@
                             <table>
                                 <tbody>`;
     
+                    let total_stars = 0
                     for (let i = 5; i >= 1; i--) {
+                        total_stars += starCounts[i] * i
+                        console.log(starCounts[i] * i, i);
                         let percentage = (starCounts[i] / totalReviews) * 100;
                         summaryHtml += `
                             <tr class="BHOKXe" role="img" aria-label="${i} estrellas, ${starCounts[i]} reseñas">
@@ -657,13 +660,13 @@
                                 </td>
                             </tr>`;
                     }
-    
+                    console.log(total_stars);
                     summaryHtml += '</tbody></table></div>';
 
                     
     
                     $('.google-reviews .summary').append(summaryHtml);
-                    $('.YTkVxc').css({display: 'flex'}).html(renderStarRating(4.7));
+                    $('.YTkVxc').css({display: 'flex'}).html(renderStarRating(Number((total_stars/totalReviews).toFixed(1))));
                 })
                 .catch(error => {
                     console.error('Error cargando las reseñas:', error);
@@ -680,6 +683,9 @@
             const emptyStars = 5 - fullStars - halfStar;  // El resto son estrellas vacías
 
             let starsHtml = '';
+
+            $('.fontDisplayLarge').text(rating)
+            $('.YTkVxc').attr('aria-label', rating+' stars')
 
             // Estrellas completas
             for (let i = 0; i < fullStars; i++) {
