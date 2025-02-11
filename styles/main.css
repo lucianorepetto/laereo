@@ -795,3 +795,10 @@ body {
         font-size: 11px;
     }
 }
+
+
+.contact-info a p:hover, .contact-info a img:hover {
+    color: var(--m-secondary-color);
+    font-weight: 400;
+    filter: invert(54%) sepia(34%) saturate(344%) hue-rotate(176deg) brightness(90%) contrast(92%);
+}

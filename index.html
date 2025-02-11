@@ -7,10 +7,11 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons' rel='stylesheet'/>
     <link crossorigin='anonymous' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' rel='stylesheet'/>
     <link href='./styles/main.css' rel='stylesheet'/>
+    <link href='./styles/footer.css' rel='stylesheet'/>
     <link href='./styles/pop_up.css' rel='stylesheet'/>
     <link href='./styles/services.css' rel='stylesheet'/>
     <link href='./styles/g-reviews.css' rel='stylesheet'/>
-    <link href='./styles/footer.css' rel='stylesheet'/>
+    
 </head>
 <body>
     <header class="header">
@@ -134,6 +135,7 @@
 
         <div class="google-reviews">
             <h2>Reseñas de nuestros clientes</h2>
+            <div class="summary"></div>
             <div class="container mini-scroll-horizontal"></div>
         </div>
 
@@ -277,11 +279,11 @@
                 </a>
             </div>
             <div>
-                <a href="mailto:taraLaereo@gmail.com">
+                <a href="mailto:tarlaereo@gmail.com">
                     <img src="./assets/icons/mail.svg" width="20px" height="20px" alt="Mail">
                     <div style="display: flex; flex-direction: column; align-items: flex-start;">
                         <div style="font-weight: bold;">Mail</div>
-                        <div>taraLaereo@gmail.com</div>
+                        <div>tarlaereo@gmail.com</div>
                     </div>
                 </a>
             </div>
@@ -563,46 +565,141 @@
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQgsn27h-mpjdG-pA_vfGjCGXj_-75TD8&libraries=places"></script>
     <script>
-        function fetchGoogleReviews() {
-            const placeId = "ChIJa1cnYVW7MpQROzTImwUHtGI";
-            const map = new google.maps.Map(document.createElement('div'));
-            const service = new google.maps.places.PlacesService(map);
-            const request = {
-                placeId: placeId,
-                fields: ['review']
-            };
-            service.getDetails(request, function (place, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                const $reviewsContainer = $('.google-reviews .container');
-                place.reviews.forEach(review => {
-                    // Crear el contenedor de estrellas
-                    let starsHtml = '';
-                    for (let i = 1; i <= 5; i++) {
-                        if (i <= review.rating) {
-                            starsHtml += '<span class="star" style="color: gold;">&#9733;</span>'; // Estrella dorada
-                        } else {
-                            starsHtml += '<span class="star" style="color: gray;">&#9733;</span>'; // Estrella gris
-                        }
+        // Reseñas
+        function fetchLocalReviews() {
+            fetch('./reviews.json')
+                .then(response => response.json())
+                .then(reviews => {
+                    const $reviewsContainer = $('.google-reviews .container');
+                    const starCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    
+                    if (!reviews || reviews.length === 0) {
+                        $reviewsContainer.append('<p>No hay reseñas disponibles.</p>');
+                        return;
                     }
-                    
-                    const $reviewElement = $(`
-                        <div class="review">
-                            <p>${starsHtml}</p>
-                            <p><strong>${review.author_name}</strong></p>
-                            <p>${review.text}</p>
+    
+                    // Orden personalizado de nombres
+                    const customOrder = [
+                        'Manuel Olmedo',
+                        'Marina Martinez',
+                        'Jose Maria Aliaga',
+                        'Martin Gutierrez',
+                        'Marisa Masetti'
+                    ];
+    
+                    // Función de comparación para el orden específico
+                    reviews.sort((a, b) => {
+                        const nameA = a.name.trim();
+                        const nameB = b.name.trim();
+                        
+                        // Si ambos nombres están en el orden personalizado, ordenamos por ese orden
+                        const indexA = customOrder.indexOf(nameA);
+                        const indexB = customOrder.indexOf(nameB);
+                        
+                        // Si el nombre no está en el orden, se coloca después
+                        const orderA = indexA !== -1 ? indexA : customOrder.length;
+                        const orderB = indexB !== -1 ? indexB : customOrder.length;
+                        
+                        return orderA - orderB;
+                    });
+    
+                    reviews.forEach(review => {
+                        const rating = parseInt(review.stars);
+                        starCounts[rating]++;
+        
+                        let starsHtml = '';
+                        for (let i = 1; i <= 5; i++) {
+                            starsHtml += `<span class="star" style="color: ${i <= rating ? 'gold' : '#f2f2f2'};">&#9733;</span>`;
+                        }
+        
+                        const reviewText = review.review_text ? `<p>${review.review_text}</p>` : '';
+                        const $reviewElement = $(`
+                            <div class="review">
+                                <p>${starsHtml}</p>
+                                <p><strong>${review.name}</strong></p>
+                                ${reviewText}
+                            </div>
+                        `);
+                        $reviewsContainer.append($reviewElement);
+                    });
+    
+                    // Mostrar el resumen de calificaciones con formato de tabla
+                    let totalReviews = reviews.length;
+                    let summaryHtml = `
+                        <div class="jANrlb ">
+                            <div class="fontDisplayLarge">4.7</div>
+                            <div role="img" class="YTkVxc" aria-label="4.7 stars">
+                                <div class="qxPNJf"></div>
+                                <div class="qxPNJf"></div>
+                                <div class="qxPNJf"></div>
+                                <div class="qxPNJf"></div>
+                                <div class="qxPNJf pCqY8"></div>
+                            </div>
+                            <div class="fontBodySmall">${totalReviews} reseñas</div>
                         </div>
-                    `);
-                    $reviewsContainer.append($reviewElement);
+                    </div>`;
+    
+                    summaryHtml += `<div class="Bd93Zb">
+                        <div class="ExlQHd">
+                            <table>
+                                <tbody>`;
+    
+                    for (let i = 5; i >= 1; i--) {
+                        let percentage = (starCounts[i] / totalReviews) * 100;
+                        summaryHtml += `
+                            <tr class="BHOKXe" role="img" aria-label="${i} estrellas, ${starCounts[i]} reseñas">
+                                <td class="yxmtmf fontBodyMedium" role="presentation">${i}</td>
+                                <td class="ZVa0Ic" role="presentation">
+                                    <div class="XINzN">
+                                        <div class="oxIpGd" style="padding-left: ${percentage}%;"></div>
+                                    </div>
+                                </td>
+                            </tr>`;
+                    }
+    
+                    summaryHtml += '</tbody></table></div>';
+
+                    
+    
+                    $('.google-reviews .summary').append(summaryHtml);
+                    $('.YTkVxc').css({display: 'flex'}).html(renderStarRating(4.7));
+                })
+                .catch(error => {
+                    console.error('Error cargando las reseñas:', error);
+                    const $reviewsContainer = $('.google-reviews .container');
+                    $reviewsContainer.append('<p>Error al cargar las reseñas.</p>');
                 });
-            }
-        });
-
-
         }
-        document.addEventListener('DOMContentLoaded', fetchGoogleReviews);
-    </script>
+    
+        document.addEventListener('DOMContentLoaded', fetchLocalReviews);
 
+        function renderStarRating(rating) {
+            const fullStars = Math.floor(rating);  // Estrellas completas
+            const halfStar = rating % 1 >= 0.5 ? 1 : 0; // Estrella media si la fracción es >= 0.5
+            const emptyStars = 5 - fullStars - halfStar;  // El resto son estrellas vacías
+
+            let starsHtml = '';
+
+            // Estrellas completas
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += `<div class="star full">&#9733;</div>`;
+            }
+
+            // Estrella media (si corresponde)
+            if (halfStar) {
+                starsHtml += `<div class="star half">&#9733;</div>`;
+            }
+
+            // Estrellas vacías
+            for (let i = 0; i < emptyStars; i++) {
+                starsHtml += `<div class="star empty">&#9733;</div>`;
+            }
+
+            return starsHtml;
+        }
+    </script>
+    
+    
 </body>
 </html>
