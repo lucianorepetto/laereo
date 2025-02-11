@@ -339,8 +339,20 @@ body {
     z-index: 1; /* To overlay on top of the image */
 }
 
-.banner_2 {
+.banner_1 {
     background-position: 20% 60%;
+}
+
+.banner_3{
+    background-position: 30% 60%;
+}
+
+.banner_4{
+    background-position: 44% 60%;
+}
+
+.banner_5{
+    background-position: 35% 60%;
 }
 
 .carousel-text {
@@ -356,13 +368,14 @@ body {
 }
 
 .carousel-text h2 {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 100;
+    font-style: oblique;
+    letter-spacing: 2px;
 }
 
 .carousel-text p {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 25px;
 }
 
 .btn{
@@ -728,11 +741,15 @@ body {
     }
 
     .carousel-text h2 {
-        font-size: 3vw;
+        font-size: 4vw;
+    }
+
+    .mant_h2{
+        font-size: 3vw !important;
     }
 
     .carousel-text p {
-        font-size: 5vw;
+        font-size: 3vw;
     }
 
     .contact-info.mobile{
