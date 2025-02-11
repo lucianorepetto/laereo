@@ -535,13 +535,13 @@
                 window.scrollTo(0, 0);
                 home = false
                 $('.header').addClass('scrolled');
-                $('.carousel, .content').hide()
-                $('#content').show()
+                $('.carousel, .content, .marcas').hide()
+                $('#content').show().css({marginBottom: '100px'})
                 $('#section-title').text(contentMap[page].title);
                 $('#breadcrumbs').html('<a style="text-decoration: underline;">Inicio</a> > <span>' + (contentMap[page].bread ? (contentMap[page].bread +' > ') : '') + contentMap[page].title + '</span>');                
                 $('#content .list').html($('.'+page).clone().show())
                 $('#section-text').text(contentMap[page].text);
-                
+
                 $('.logo, #breadcrumbs a').off('click').click(()=>{
                     goHome()
                 })

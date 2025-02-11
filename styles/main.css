@@ -35,7 +35,6 @@ body {
     overflow-x: hidden;
     word-break: unset;
     -webkit-tap-highlight-color: transparent;
-    min-height: 140vh;
     color: #707070;
     font-weight: 300;
     margin: 0;
@@ -125,9 +124,7 @@ body.dont-scroll {
     --m-primary-color: white;
     --m-secondary-color: rgb(88 149 200);
 }
-body {
-    font-family: 'Roboto', sans-serif;
-}
+
 .header {
     position: fixed;
     top: 0;
