@@ -741,15 +741,15 @@ body {
     }
 
     .carousel-text h2 {
-        font-size: 4vw;
+        font-size: 15px;
     }
 
     .mant_h2{
-        font-size: 3vw !important;
+        font-size: 12px !important;
     }
 
     .carousel-text p {
-        font-size: 3vw;
+        font-size: 12px;
     }
 
     .contact-info.mobile{
