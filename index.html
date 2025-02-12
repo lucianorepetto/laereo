@@ -626,8 +626,10 @@
                         return orderA - orderB;
                     });
     
+                    let totalReviews = reviews.length;
                     reviews.forEach(review => {
                         const rating = parseInt(review.stars);
+                        if (rating <= 3){return totalReviews--}
                         starCounts[rating]++;
         
                         let starsHtml = '';
@@ -647,7 +649,7 @@
                     });
     
                     // Mostrar el resumen de calificaciones con formato de tabla
-                    let totalReviews = reviews.length;
+                    
                     let summaryHtml = `
                         <div class="jANrlb ">
                             <div class="fontDisplayLarge"></div>
