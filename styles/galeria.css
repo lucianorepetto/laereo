@@ -1,3 +1,9 @@
+.galeria{
+    width: 100%;
+}
+
 .galeria img{
-    width: 400px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }

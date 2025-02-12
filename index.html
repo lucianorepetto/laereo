@@ -178,12 +178,11 @@
     <div id="content">
         <!-- This is where content will dynamically load -->
         <div class="banner">
-            <img id="section-image" src="./assets/services/services_banner.webp" alt="">
             <div class="info">
                 <h1 id="section-title"></h1>
                 <div id="breadcrumbs"></div>
             </div>
-            
+            <div class="banner-scroll invisible-scroll"></div>
         </div>
         <div class="text">
             <div class="list">
@@ -194,7 +193,7 @@
                     <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><div class="btn black consultar"><img src="./assets/icons/wpp.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> Consultar</div></a>
                     <a href="tel:+543541548995"><div class="btn black llamar"><img src="./assets/icons/telefono.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> Llamar</div></a>
                 </div>
-                <img src="./assets/services/avion.webp" width="260px" style="margin-bottom: 50px;">
+                <img class="lateral-img"  width="260px" style="margin-bottom: 50px;">
             </div>
         </div>
         
@@ -517,20 +516,21 @@
     
     $(document).ready(()=>{
         $('#content').hide()
-        // New function to handle dynamic content loading
+        let isScrolling = false; 
+
         function loadContent(page) {
             
             
             const contentMap = {
-                'mantenimiento': { title: 'Mantenimiento', bread: 'Servicios', image: './assets/BANNER_1.webp'},
-                'avionica': { title: 'Aviónica', bread: 'Servicios', image: './assets/BANNER_1.webp'},
-                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', image: './assets/BANNER_1.webp'},
-                'repuestos': { title: 'Repuestos', bread: 'Servicios', image: './assets/BANNER_1.webp'},
-                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', image: './assets/BANNER_1.webp'},
-                'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', image: './assets/BANNER_1.webp'},
-                'quienes-somos': { title: 'Quiénes Somos', image: './assets/BANNER_1.webp'},
-                'habilitaciones': { title: 'Habilitaciones', image: './assets/BANNER_1.webp'},
-                'galeria': { title: 'Galería', image: './assets/BANNER_1.webp'}
+                'mantenimiento': { title: 'Mantenimiento', bread: 'Servicios', banner: 7, lateral: true},
+                'avionica': { title: 'Aviónica', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
+                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
+                'repuestos': { title: 'Repuestos', bread: 'Servicios', banner: 1, lateral: 1, image: './assets/BANNER_1.webp'},
+                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
+                'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', banner: 7, lateral: true, image: './assets/BANNER_1.webp'},
+                'quienes-somos': { title: 'Quiénes Somos', banner: 5, lateral: true, image: './assets/BANNER_1.webp'},
+                'habilitaciones': { title: 'Habilitaciones', banner: 1, lateral: 1, image: './assets/BANNER_1.webp'},
+                'galeria': { title: 'Galería'}
             };
 
             if (contentMap[page]) {
@@ -542,8 +542,75 @@
                 $('#content').show().css({marginBottom: '100px'})
                 $('#section-title').text(contentMap[page].title);
                 $('#breadcrumbs').html('<a style="text-decoration: underline;">Inicio</a> > <span>' + (contentMap[page].bread ? (contentMap[page].bread +' > ') : '') + contentMap[page].title + '</span>');                
-                $('#content .list').html($('.'+page).clone().show())
+                $('.'+page).is(':visible') ? undefined : $('#content .list').html($('.'+page).clone().show())
                 $('#section-text').text(contentMap[page].text);
+
+                if(contentMap[page].banner){
+                    $('.banner').show().css({marginTop: '88px'})
+                    let $banner = $(".banner .banner-scroll").empty();
+
+                    if(contentMap[page].banner > 1){
+                        Array.from({ length: contentMap[page].banner }, (_, i) => {
+                            $banner.append(
+                                $('<img>', {src: `./assets/services/${page}/${(i + 1)}.webp`})
+                            )
+                        });
+
+                        
+                        let scrollSpeed = 10; // Velocidad del scroll (menor número = más rápido)
+                        let scrollAmount = 1;
+                        
+
+                        // Duplicar las imágenes internas del banner
+                        let $images = $banner.find("img");
+                        $images.each(function() {
+                            let $clone = $(this).clone();  // Clonamos cada imagen
+                            $banner.append($clone);         // Agregamos el clon al final del contenedor
+                        });
+
+                        function startScrolling() {
+                            if (isScrolling) return; // Si ya está en movimiento, no reinicia
+
+                            isScrolling = true;
+
+                            function scroll() {
+                                $banner.scrollLeft($banner.scrollLeft() + scrollAmount);
+
+                                // Si el scroll ha alcanzado la mitad del contenedor (la longitud del banner original)
+                                if ($banner.scrollLeft() >= $banner[0].scrollWidth / 2) {
+                                    $banner.scrollLeft(0); // Reinicia el scroll al principio sin que sea visible
+                                }
+
+                                // Llama nuevamente a `scroll` para un desplazamiento infinito
+                                requestAnimationFrame(scroll);
+                            }
+
+                            // Inicia el desplazamiento
+                            scroll();
+                        }
+
+                        startScrolling(); // Inicia el desplazamiento automático
+                        
+                    } else {
+                        $banner.append(
+                            $('<img>', {src: `./assets/services/services_banner.webp`}).css({width: '100%'})
+                        )
+                    }
+                } else {
+                    $('.banner').hide().parent().css({marginTop: '120px'})
+                }
+
+                if(contentMap[page].lateral){
+                    if(contentMap[page].lateral === 1){
+                        $('.lateral-img').attr('src', `./assets/services/avion.webp`)
+                    } else {
+                        $('.lateral-img').attr('src', `./assets/services/${page}/lateral.webp`)
+                    }
+                    
+                } else {
+                    $('.lateral').hide()
+                }
+                
 
                 $('.logo, #breadcrumbs a').off('click').click(()=>{
                     goHome()
