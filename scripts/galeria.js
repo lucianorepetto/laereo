@@ -56,9 +56,8 @@ function fullScreenGallery(images, clickedSrc) {
         }
         updatePosition();
     });
-    
-    // Hide arrows on mobile
-    $(window).resize(function() {
+
+    let resize = function() {
         if ($(window).width() < 768) {
             prevBtn.hide();
             nextBtn.hide();
@@ -68,6 +67,10 @@ function fullScreenGallery(images, clickedSrc) {
             nextBtn.show();
             carousel.css('width', '');  // Aquí puedes definir el valor original si lo necesitas
         }
-    });
-    
+    }
+
+
+    // Hide arrows on mobile
+    $(window).resize(()=>{resize()});
+    resize()
 }
