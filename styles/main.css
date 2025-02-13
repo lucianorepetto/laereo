@@ -494,6 +494,7 @@ body.dont-scroll {
 }
 
 .service-item {
+    color: #707070;
     flex: 1 1 calc(20% - 20px);
     min-width: 100px;
     text-align: center;
