@@ -168,7 +168,7 @@
             <div class="contact-info">
                 <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><p><img src="./assets/icons/wpp.svg" width="20px"/> Whatsapp</p></a>
                 <a href="tel:+543541548995"><p><img src="./assets/icons/telefono.svg" width="20px"/> +54 3541 54-8995</p></a>
-                <a href="mailto:tarlaareo@gmail.com"><p><img src="./assets/icons/mail.svg" width="20px"/> tarlaareo@gmail.com</p></a>
+                <a href="mailto:tarlaereo@gmail.com"><p><img src="./assets/icons/mail.svg" width="20px"/> tarlaereo@gmail.com</p></a>
                 <a href="https://www.facebook.com/LaereoTallerAeronautico" target="_blank"><p><img src="./assets/icons/facebook.svg" width="20px"/> L'aereo Taller Aeronáutico</p></a>
                 <a href="https://www.instagram.com/tarlaereo" target="_blank"><p><img src="./assets/icons/insta.svg" width="20px"/> @tarlaereo</p></a>
             </div>
@@ -246,6 +246,29 @@
     
             
         </div>
+    </div>
+
+    <div class="habilitaciones" style="display: none;">
+        <h2>Habilitaciones</h2>
+        <div class="card-container">
+            <a href="./assets/services/habilitaciones/IF-2024-120344957-APN-DNSO-ANAC.pdf" target="_blank"><div class="card"
+                style="display: flex; justify-content: space-between; align-items: center;">
+            <strong>Certificado de Habilitación</strong>
+            <img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+        </div></a>
+            <a href="./assets/services/habilitaciones/IF-2024-120654977-APN-DNSO-ANAC.pdf" target="_blank"><div class="card"
+                style="display: flex; justify-content: space-between; align-items: center;">
+            <div><strong>Especificaciones de Operación</strong> - Salétite la Cumbre</div><img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+        </div></a>
+            <a href="./assets/services/habilitaciones/IF-2024-94241233-APN-DNSO-ANAC.pdf" target="_blank"><div class="card"
+                style="display: flex; justify-content: space-between; align-items: center;">
+            <strong>Especificaciones de Operación</strong><img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+        </div></a>
+            <a href="./assets/services/habilitaciones/LISTA DE CAPACIDADES REV 0.pdf" target="_blank"><div class="card"
+                style="display: flex; justify-content: space-between; align-items: center;">
+            <strong>Lista de Capacidades REV 0</strong><img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+        </div></a>
+          </div>
     </div>
 
     <div id="content-galeria" style="display: none;">
@@ -529,7 +552,7 @@
                 'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', banner: 8, lateral: true},
                 'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', banner: 6, lateral: true},
                 'quienes-somos': { title: 'Quiénes Somos', banner: 5, lateral: true},
-                'habilitaciones': { title: 'Habilitaciones', banner: 1, lateral: 1},
+                'habilitaciones': { title: 'Habilitaciones'},
                 'galeria': { title: 'Galería', subtitle: 'Nuestros trabajos'}
             };
 
@@ -608,6 +631,7 @@
                     $('.banner').hide().parent().css({marginTop: '120px'})
                 }
 
+
                 if(contentMap[page].lateral){
                     $('.lateral').show()
                     if(contentMap[page].lateral === 1){
@@ -651,6 +675,12 @@
                             });
                         }
                     })
+                }
+
+                // Habilitaciones
+                if(page == "habilitaciones"){
+                    $('.'+page).is(':visible') ? undefined : $('#content .list').html($('.'+page).clone().show())
+                    $('#content').show().css({marginBottom: '500px'})
                 }
             }
         }
