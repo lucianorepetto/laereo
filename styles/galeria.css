@@ -33,16 +33,18 @@
 }
 
 .sliderFullScreen-carousel {
+    width: 50%;
     display: flex;
-    overflow: hidden;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Para habilitar el deslizamiento suave en iOS */
 }
 
 .sliderFullScreen-carousel-img {
-    max-width: 100%;
-    display: none;
+    width: 100%;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    object-fit: contain; /* O 'cover', dependiendo de cómo quieras ajustar la imagen */
 }
 
 .sliderFullScreen-carousel-img.active {
