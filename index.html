@@ -523,13 +523,13 @@
             
             const contentMap = {
                 'mantenimiento': { title: 'Mantenimiento', bread: 'Servicios', banner: 9, lateral: true},
-                'avionica': { title: 'Aviónica', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
-                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
-                'repuestos': { title: 'Repuestos', bread: 'Servicios', banner: 1, lateral: 1, image: './assets/BANNER_1.webp'},
-                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', banner: 8, lateral: true, image: './assets/BANNER_1.webp'},
-                'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', banner: 7, lateral: true, image: './assets/BANNER_1.webp'},
-                'quienes-somos': { title: 'Quiénes Somos', banner: 5, lateral: true, image: './assets/BANNER_1.webp'},
-                'habilitaciones': { title: 'Habilitaciones', banner: 1, lateral: 1, image: './assets/BANNER_1.webp'},
+                'avionica': { title: 'Aviónica', bread: 'Servicios', banner: 6, lateral: true},
+                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', banner: 6, lateral: true},
+                'repuestos': { title: 'Repuestos', bread: 'Servicios', banner: './assets/services/repuestos/1.webp', lateral: 1},
+                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', banner: 8, lateral: true},
+                'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', banner: 6, lateral: true},
+                'quienes-somos': { title: 'Quiénes Somos', banner: 5, lateral: true},
+                'habilitaciones': { title: 'Habilitaciones', banner: 1, lateral: 1},
                 'galeria': { title: 'Galería', subtitle: 'Nuestros trabajos'}
             };
 
@@ -539,9 +539,7 @@
                 home = false
 
                 $('.header').addClass('scrolled');
-                $('.carousel, .content, .marcas').hide()
-                $('#content-galeria').hide()
-                $('#content').hide()
+                $('.carousel, .content, .marcas, #content-galeria,#content').hide()
                 $('#section-title').text(contentMap[page].title);
                 $('#breadcrumbs').html('<a style="text-decoration: underline;">Inicio</a> > <span>' + (contentMap[page].bread ? (contentMap[page].bread +' > ') : '') + contentMap[page].title + '</span>');                
                 
@@ -554,7 +552,12 @@
                     $('.banner').show().css({marginTop: '88px'})
                     let $banner = $(".banner .banner-scroll").empty();
 
-                    if(contentMap[page].banner > 1){
+                    if (isNaN(contentMap[page].banner)) {
+                        // No es un número
+                        $banner.append(
+                            $('<img>', {src: contentMap[page].banner}).css({width: '100%'})
+                        )
+                    } else if(contentMap[page].banner > 1){
                         Array.from({ length: contentMap[page].banner }, (_, i) => {
                             $banner.append(
                                 $('<img>', {src: `./assets/services/${page}/${(i + 1)}.webp`})
