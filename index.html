@@ -526,11 +526,11 @@
                 'avionica': { title: 'Aviónica', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
                 'motores': { title: 'Motores y Accesorios', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
                 'repuestos': { title: 'Repuestos', bread: 'Servicios', banner: 1, lateral: 1, image: './assets/BANNER_1.webp'},
-                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', banner: 6, lateral: true, image: './assets/BANNER_1.webp'},
+                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', banner: 8, lateral: true, image: './assets/BANNER_1.webp'},
                 'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', banner: 7, lateral: true, image: './assets/BANNER_1.webp'},
                 'quienes-somos': { title: 'Quiénes Somos', banner: 5, lateral: true, image: './assets/BANNER_1.webp'},
                 'habilitaciones': { title: 'Habilitaciones', banner: 1, lateral: 1, image: './assets/BANNER_1.webp'},
-                'galeria': { title: 'Galería'}
+                'galeria': { title: 'Galería', subtitle: 'Nuestros trabajos'}
             };
 
             if (contentMap[page]) {
@@ -615,6 +615,32 @@
                 $('.logo, #breadcrumbs a').off('click').click(()=>{
                     goHome()
                 })
+
+                //Galeria
+                if(page == 'galeria'){
+                    $('#content').html(
+                        $('<div>').css({padding: '20px'}).append(
+                            $('#section-title'),
+                            $('#breadcrumbs'),    
+                            $('<div>', {class:'subtitle', text: contentMap[page].subtitle}),
+                            $('.galeria'),
+                        )
+                    )
+                    let images = []
+                    $.each(contentMap, function (key, content) {
+                        if(content.banner > 1){
+                            Array.from({ length: content.banner }, (_, i) => {
+                                let src_ = `./assets/services/${key}/${(i + 1)}.webp`
+                                images.push(src_)
+                                $('.galeria').append(
+                                    $('<img>', {src: src_}).click(function(){
+                                        fullScreenGallery(images, $(this).attr('src'));
+                                    })
+                                )
+                            });
+                        }
+                    })
+                }
             }
         }
 
