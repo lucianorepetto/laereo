@@ -1,3 +1,10 @@
+#content-galeria{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 100px;
+}
+
 .galeria{
     display: flex;
     flex-wrap: wrap;

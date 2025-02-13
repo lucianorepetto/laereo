@@ -248,8 +248,8 @@
         </div>
     </div>
 
-    <div class="galeria" style="display: none;">
-        
+    <div id="content-galeria" style="display: none;">
+        <div class="galeria"></div>
     </div>
 
     <div class="marcas">
@@ -537,15 +537,20 @@
                 closeMenu()
                 window.scrollTo(0, 0);
                 home = false
+
                 $('.header').addClass('scrolled');
                 $('.carousel, .content, .marcas').hide()
-                $('#content').show().css({marginBottom: '100px'})
+                $('#content-galeria').hide()
+                $('#content').hide()
                 $('#section-title').text(contentMap[page].title);
                 $('#breadcrumbs').html('<a style="text-decoration: underline;">Inicio</a> > <span>' + (contentMap[page].bread ? (contentMap[page].bread +' > ') : '') + contentMap[page].title + '</span>');                
-                $('.'+page).is(':visible') ? undefined : $('#content .list').html($('.'+page).clone().show())
-                $('#section-text').text(contentMap[page].text);
+                
 
                 if(contentMap[page].banner){
+                    $('#content').show().css({marginBottom: '100px'})
+                    $('.banner').parent().css({marginTop: ''})
+                    $('.'+page).is(':visible') ? undefined : $('#content .list').html($('.'+page).clone().show())
+                    $('#section-text').text(contentMap[page].text); 
                     $('.banner').show().css({marginTop: '88px'})
                     let $banner = $(".banner .banner-scroll").empty();
 
@@ -601,6 +606,7 @@
                 }
 
                 if(contentMap[page].lateral){
+                    $('.lateral').show()
                     if(contentMap[page].lateral === 1){
                         $('.lateral-img').attr('src', `./assets/services/avion.webp`)
                     } else {
@@ -618,14 +624,16 @@
 
                 //Galeria
                 if(page == 'galeria'){
-                    $('#content').html(
-                        $('<div>').css({padding: '20px'}).append(
-                            $('#section-title'),
-                            $('#breadcrumbs'),    
-                            $('<div>', {class:'subtitle', text: contentMap[page].subtitle}),
-                            $('.galeria'),
-                        )
+                    let bread
+                    $('#content-galeria').show().empty().append(
+                        $('#section-title').clone(),
+                        bread = $('#breadcrumbs').clone(),    
+                        $('<div>', {class:'subtitle', text: contentMap[page].subtitle}),
+                        $('<div>', {class: 'galeria'})
                     )
+
+                    bread.find('a').css({color: '#707070'})
+
                     let images = []
                     $.each(contentMap, function (key, content) {
                         if(content.banner > 1){

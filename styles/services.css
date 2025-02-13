@@ -1,12 +1,8 @@
 #content{
     max-width: 1200px;
-    
     margin: auto;
 }
 
-#breadcrumbs a{
-    color: #707070;
-}
 .subtitle{
     margin-top: 20px;
     margin-bottom: 10px;
