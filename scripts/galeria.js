@@ -54,7 +54,7 @@ function fullScreenGallery(images, clickedSrc) {
     });
 
     let resize = function() {
-        if ($(window).width() < 768) {
+        if ($(window).width() < 800) {
             prevBtn.hide();
             nextBtn.hide();
             carousel.css('width', '100vw');

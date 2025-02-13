@@ -495,10 +495,11 @@ body.dont-scroll {
 
 .service-item {
     color: #707070;
-    flex: 1 1 calc(20% - 20px);
-    min-width: 100px;
+    flex: 1 1 calc(11% - 20px);
+    min-width: 90px;
     text-align: center;
     border-right: 2px #ccc solid;
+    padding: 0 10px;
 }
 
 .service-item:last-child{
@@ -508,14 +509,14 @@ body.dont-scroll {
 .service-item img {
     width: 80px;
     flex: 0 0 80px;
-    height: 50px;
+    height: 45px;
 }
 
 .service-item p {
     margin-top: 5px;
     font-size: 15px;
     font-weight: bold;
-    text-wrap: nowrap;
+    /* text-wrap: nowrap; */
 }
 
 .images-section {
@@ -551,7 +552,7 @@ body.dont-scroll {
     font-style: oblique;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
     .services-icons{
         gap: 20px;
         padding: 0;
@@ -578,6 +579,7 @@ body.dont-scroll {
 
     .service-item p{
         margin: 0;
+        text-wrap: nowrap;
     }
 
     .xp{
@@ -670,7 +672,7 @@ body.dont-scroll {
     font-size: 14px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 
     .not_mob{
         display: none !important;
