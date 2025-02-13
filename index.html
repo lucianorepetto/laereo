@@ -679,8 +679,9 @@
 
                 // Habilitaciones
                 if(page == "habilitaciones"){
-                    $('.'+page).is(':visible') ? undefined : $('#content .list').html($('.'+page).clone().show())
                     $('#content').show().css({marginBottom: '500px'})
+                    $('.'+page).is(':visible') ? undefined : $('#content .list').html($('.'+page).clone().show())
+                    
                 }
             }
         }
