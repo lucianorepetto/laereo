@@ -95,7 +95,9 @@
         "btn_llamar": "Llamar",
         "content_breadcrumb_home": "Inicio",
 
-        "gallery_subtitle": "Nuestros trabajos"
+        "gallery_subtitle": "Nuestros trabajos",
+
+        "select_lang": "Selecciona Idioma:"
     },
     "en": {
         "nav_services": "Services",
@@ -191,7 +193,9 @@
         "btn_llamar": "Call",
         "content_breadcrumb_home": "Home",
 
-        "gallery_subtitle": "Our work"
+        "gallery_subtitle": "Our work",
+
+        "select_lang": "Select Language:"
     }
   }
   

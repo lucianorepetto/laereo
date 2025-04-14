@@ -30,7 +30,7 @@
                 </div>
                 
                 <div class="menu_background mobile" style="display: none;"></div>
-                <div class="menu">
+                <div class="menu" style="z-index: 1;">
                     <div class="menu_title"></div>
                     <ul class="ops mini-scroll">
                       <li class="dropdown" data-section="servicios"><a style="cursor: pointer;" data-i18n="nav_services">Servicios</a>
@@ -60,14 +60,14 @@
                     </div>
                   
                     <div id="lang-menu" style="position: absolute; top: 100%; left: 50%; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 10px; display: none; margin-top: 10px; transform: translateX(-50%); width: 141px;">
-                      <p style="margin: 0 0 10px;">Selecciona Idioma:</p>
+                      <p style="margin: 0 0 10px;"  data-i18n="select_lang">Selecciona Idioma:</p>
                       <div onclick="changeLanguage('es')" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; cursor: pointer; padding: 5px 0;">
                         <img class="not_change_color" src="./assets/icons/es.webp" style="width: 20px;" />
                         <span>Español</span>
                       </div>
                       <div onclick="changeLanguage('en')" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; cursor: pointer; padding: 5px 0;">
                         <img class="not_change_color" src="./assets/icons/en.webp" style="width: 20px;" />
-                        <span>Inglés</span>
+                        <span>English</span>
                       </div>
                     </div>
                   </div>
