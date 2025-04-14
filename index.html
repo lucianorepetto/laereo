@@ -13,12 +13,12 @@
     <link href='./styles/g-reviews.css' rel='stylesheet'/>
     <link href='./styles/galeria.css' rel='stylesheet'/>
 
-    <link rel="icon" href="./assets/favicons/favicon_16x16.png" sizes="16x16"/>
-    <link rel="icon" href="./assets/favicons/favicon_32x32.png" sizes="32x32"/>
-    <link rel="icon" href="./assets/favicons/favicon_48x48.png" sizes="48x48"/>
-    <link rel="icon" href="./assets/favicons/favicon_64x64.png" sizes="64x64"/>
-    <link rel="icon" href="./assets/favicons/favicon_128x128.png" sizes="128x128"/>
-    <link rel="icon" href="./assets/favicons/favicon_256x256.png" sizes="256x256"/>
+    <link rel="icon" href="./assets/favicons/favicon_16x16.webp" sizes="16x16"/>
+    <link rel="icon" href="./assets/favicons/favicon_32x32.webp" sizes="32x32"/>
+    <link rel="icon" href="./assets/favicons/favicon_48x48.webp" sizes="48x48"/>
+    <link rel="icon" href="./assets/favicons/favicon_64x64.webp" sizes="64x64"/>
+    <link rel="icon" href="./assets/favicons/favicon_128x128.webp" sizes="128x128"/>
+    <link rel="icon" href="./assets/favicons/favicon_256x256.webp" sizes="256x256"/>
 </head>
 <body>
     <header class="header">
@@ -51,6 +51,27 @@
                 
             </div>
             <div>
+                <div id="language-selector" style="position: relative;">
+                    <div class="borders" onclick="toggleLangMenu()" style="display: flex; align-items: center; gap: 6px; border: 1px solid white; padding: 5px 10px; border-radius: 100px; cursor: pointer; color: white;">
+                      <img class="not_change_color" id="current-flag" src="./assets/icons/en.webp" style="width: 20px;" />
+                      <span id="current-lang" class="change_color">EN</span>
+                      <i class="change_color fas fa-chevron-down" style="font-size: 10px; color: white;"></i>
+                    </div>
+                  
+                    <div id="lang-menu" style="position: absolute; top: 100%; left: 0; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 10px; display: none;
+                    margin-top: 10px;
+                    width: 141px;">
+                      <p style="margin: 0 0 10px;">Selecciona Idioma:</p>
+                      <div onclick="changeLanguage('es')" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; cursor: pointer; padding: 5px 0;">
+                        <img class="not_change_color" src="./assets/icons/es.webp" style="width: 20px;" />
+                        <span>Español</span>
+                      </div>
+                      <div onclick="changeLanguage('en')" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; cursor: pointer; padding: 5px 0;">
+                        <img class="not_change_color" src="./assets/icons/en.webp" style="width: 20px;" />
+                        <span>Inglés</span>
+                      </div>
+                    </div>
+                  </div>
                 <div class="contact-button" data-i18n="contact">Contacto</div>
             </div>
         </nav>
@@ -968,29 +989,58 @@
             const pathLang = window.location.pathname.split('/')[1];
             const queryLang = urlParams.get('lang');
             lang = ['es', 'en'].includes(queryLang) ? queryLang : (['es', 'en'].includes(pathLang) ? pathLang : 'es');
-        
+
             fetch('/lang.json')
             .then(res => res.json())
             .then(data => {
-                t = data[lang];
-                setLang()
+                t = data;
+                changeLanguage(lang)
             });
            
         })
 
         function setLang(){
-            console.log(lang, t);
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (t[key] || t[key] == '') el.innerText = t[key];
+                const key = el.getAttribute('data-i18n');
+                const translate = t[lang]
+                if (translate[key] || translate[key] == '') el.innerText = translate[key];
             });
 
             document.querySelectorAll('a[href*="{lang}"]').forEach(link => {
                 const href = link.getAttribute('href');
                 link.setAttribute('href', href.replace('{lang}', lang));
             });
+
+            // Actualizar URL actual con ?lang=xx o cambiar el valor
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang); // si ya existe lo modifica, si no lo agrega
+
+            // Cambia la URL sin recargar
+            window.history.replaceState({}, '', url);
         }
+
+        function toggleLangMenu() {
+            const menu = document.getElementById('lang-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function changeLanguage(selectedLang) {
+            lang = selectedLang;
+            setLang();
+
+            document.getElementById('current-flag').src = `./assets/icons/${lang}.webp`;
+            document.getElementById('current-lang').innerText = lang.toUpperCase();
+            document.getElementById('lang-menu').style.display = 'none';
+        }
+
+        // Cerrar el menú si se hace clic fuera
+        document.addEventListener('click', function (e) {
+            const selector = document.getElementById('language-selector');
+            if (!selector.contains(e.target)) {
+            document.getElementById('lang-menu').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
