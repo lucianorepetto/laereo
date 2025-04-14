@@ -778,6 +778,12 @@
                         
                         return orderA - orderB;
                     });
+
+                    // Función de quitar reviews por nombre
+                    const toRemove = ['Marisa Masetti']
+                    reviews = reviews.filter(x =>{
+                        if (!toRemove.includes(x.name.trim())){return x}
+                    })
     
                     let totalReviews = reviews.length;
                     reviews.forEach(review => {
