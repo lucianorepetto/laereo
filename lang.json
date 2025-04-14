@@ -1,0 +1,197 @@
+{
+    "es": {
+        "nav_services": "Servicios",
+        "nav_mantenimiento": "Mantenimiento",
+        "nav_avionica": "Aviónica",
+        "nav_motores": "Motores y Accesorios",
+        "nav_repuestos": "Repuestos",
+        "nav_reparaciones": "Reparaciones Estructurales",
+        "nav_inspecciones": "Inspecciones Pre-Compra y Venta de Aeronaves",
+        "nav_about": "Quiénes Somos",
+        "nav_certifications": "Habilitaciones",
+        "nav_gallery": "Galería",
+        "contact": "Contacto",
+
+        "hero_title_1": "CONFIANZA Y SEGURIDAD OPERACIONAL",
+        "hero_subtitle_1": "ATENCIÓN PERSONALIZADA EN CADA",
+        "hero_cta": "CONTACTAR",
+        "hero_serv_mant": "SERVICIO DE MANTENIMIENTO",
+
+        "banner_avionica_title": "INSTALACIÓN Y VENTA DE AVIÓNICA",
+        "banner_avionica_text": "SERVICIO LÍDER EN LA REGIÓN",
+        "banner_avionica_cta": "CONSULTAR",
+
+        "banner_inspecciones_line1": "INSPECCIONES PRE-COMPRA Y VENTA",
+        "banner_inspecciones_title": "DE AERONAVES",
+        "banner_inspecciones_text": "CONSULTE POR ASESORAMIENTO PERSONALIZADO",
+        "banner_inspecciones_cta": "MÁS INFO",
+
+        "banner_talleres_title": "DOS TALLERES HABILITADOS",
+        "banner_talleres_text": "PARA BRINDAR MEJORES SOLUCIONES LOGÍSTICAS",
+        "banner_talleres_cta": "VER UBICACIÓN",
+
+        "banner_mantenimiento_title": "MANTENIMIENTO GENERAL PARA SU AERONAVE",
+        "banner_mantenimiento_text": "CONSULTE POR NUESTROS SERVICIOS PERSONALIZADOS",
+        "banner_mantenimiento_cta": "CONTACTAR",
+
+        "home_experience_span1": "MÁS DE 25 AÑOS",
+        "home_experience_strong": "DE EXPERIENCIA INTERNACIONAL",
+        "home_experience_span2": "EN MANTENIMIENTO AERONÁUTICO",
+
+        "home_services_heading": "Servicios",
+        "service_mantenimiento": "Mantenimiento",
+        "service_avionica": "Aviónica",
+        "service_motores": "Motores y Accesorios",
+        "service_repuestos": "Repuestos",
+        "service_reparaciones": "Reparaciones Estructurales",
+        "service_inspecciones": "Inspecciones y Venta",
+        
+        "video_text_span1": "DONDE LA ",
+        "video_text_strong1": "PRESICIÓN",
+        "video_text_span2": " Y",
+        "video_text_span3": "LA ",
+        "video_text_strong2": "EXCELENCIA",
+        "video_text_span4": "SE ENCUENTRAN",
+        "video_cta": "VER GALERÍA",
+
+        
+        "reviews_title": "Reseñas de nuestros clientes",
+        "reviews_none": "No hay reseñas disponibles.",
+        "reviews_label": "reseñas",
+
+        "brands_title": "Marcas",
+
+        "footer_phone_label": "Teléfono",
+        
+        "popup_facebook": "L'aereo Taller Aeronáutico",
+
+        "mant_1": "Inspección anual de aeronaves Turbohélices y Pistón hasta 5700kg",
+        "mant_2": "Inspecciones Intermedias",
+        "mant_3": "Instalaciones de STC",
+        "mant_4": "Instalaciones de Integrales de Aviónica y Reformas de Paneles de Instrumentos",
+        "mant_5": "Reparaciones y reformas estructurales",
+        "mant_6": "Servicios de NDT (Ensayos no Destructivos)",
+        "avionica_1": "Certificación de Sistemas Altimétricos y Pitot Estática, RAAC 91.411",
+        "avionica_2": "Certificación de Sistemas Transponder ATC, RAAC 91.413",
+        "motores_1": "Overhaul de Motores Lycoming y Continental",
+        "motores_2": "Overhaul de Magnetos TCM / Unison / Slick",
+        "reparaciones_text": "Especialistas en reparaciones estructurales de aeronaves con la más alta calidad y compromiso. Nuestro equipo de ingenieros, técnicos y pilotos garantiza un servicio confiable, asegurando seguridad y confianza en cada vuelo.",
+        "repuestos_text": "Calidad y precisión en cada pieza para garantizar el óptimo rendimiento de tu aeronave.",
+        "qs_paragraph_1": "Un equipo de trabajo nacido desde la base de la pasión por la aeronáutica, profesionales experimentados, comprometidos y meticulosos dieron vida a este emprendimiento encabezado por su fundador Jose Masetti, quien alienta constantemente en ser los mejores haciendo lo que nos gusta.",
+        "qs_paragraph_2": "Ingenieros, técnicos y pilotos forman el grupo profesional que da vida a esta organización, brindando soluciones integrales en el mantenimiento de aeronaves, entregando un servicio confiable asegurando la fidelización de los clientes.",
+        "qs_title": "Organización Actual",
+        "qs_paragraph_3": "Ubicados estratégicamente en el aeródromo Coronel Olmedo, ciudad de Córdoba con instalaciones propias, L'AEREO brinda servicios de mantenimiento a operadoras de aeronaves de todo el país, logrando una variada y repetitiva demanda de servicios, realizando tareas integrales de mantenimiento en aeronaves monomotores, bimotores y de todos sus sistemas y componentes que requieran intervención por condición, vencimiento u horas de vuelo.",
+        "qs_paragraph_4": "L'AEREO es líder en la región por ser uno de los pocos proveedores cordobeses de servicios de instalación de aviónica y eléctricos, como así también con capacidades para sistemas altimétricos y de pitot estática.",
+        "qs_map_title": "MAPA",
+        "qs_map_button": "Abrir mapa",
+
+        "certifications_title": "Habilitaciones",
+        "cert_1": "Certificado de Habilitación",
+        "cert_2": "Especificaciones de Operación - Salétite la Cumbre",
+        "cert_3": "Especificaciones de Operación",
+        "cert_4": "Lista de Capacidades REV 0",
+
+        "btn_consultar": "Consultar",
+        "btn_llamar": "Llamar",
+        "content_breadcrumb_home": "Inicio",
+
+        "gallery_subtitle": "Nuestros trabajos"
+    },
+    "en": {
+        "nav_services": "Services",
+        "nav_mantenimiento": "Maintenance",
+        "nav_avionica": "Avionics",
+        "nav_motores": "Engines and Accessories",
+        "nav_repuestos": "Spare Parts",
+        "nav_reparaciones": "Structural Repairs",
+        "nav_inspecciones": "Pre-Purchase and Aircraft Sales Inspections",
+        "nav_about": "About Us",
+        "nav_certifications": "Certifications",
+        "nav_gallery": "Gallery",
+        "contact": "Contact",
+
+        "hero_title_1": "TRUST AND OPERATIONAL SAFETY",
+        "hero_subtitle_1": "PERSONALIZED ATTENTION IN EVERY",        
+        "hero_serv_mant": "MAINTENANCE SERVICE",
+        "hero_cta": "CONTACT",
+
+        "banner_avionica_title": "AVIONICS INSTALLATION AND SALES",
+        "banner_avionica_text": "LEADING SERVICE IN THE REGION",
+        "banner_avionica_cta": "INQUIRE",
+
+        "banner_inspecciones_line1": "PRE-PURCHASE AND SALES INSPECTIONS",
+        "banner_inspecciones_title": "OF AIRCRAFT",
+        "banner_inspecciones_text": "ASK FOR PERSONALIZED ADVICE",
+        "banner_inspecciones_cta": "MORE INFO",
+
+        "banner_talleres_title": "TWO AUTHORIZED WORKSHOPS",
+        "banner_talleres_text": "FOR BETTER LOGISTICS SOLUTIONS",
+        "banner_talleres_cta": "SEE LOCATION",
+
+        "banner_mantenimiento_title": "GENERAL MAINTENANCE FOR YOUR AIRCRAFT",
+        "banner_mantenimiento_text": "ASK ABOUT OUR CUSTOMIZED SERVICES",
+        "banner_mantenimiento_cta": "CONTACT",
+
+        "home_experience_span1": "OVER 25 YEARS",
+        "home_experience_strong": "OF INTERNATIONAL EXPERIENCE",
+        "home_experience_span2": "IN AIRCRAFT MAINTENANCE",
+
+        "service_mantenimiento": "Maintenance",
+        "service_avionica": "Avionics",
+        "service_motores": "Engines and Accessories",
+        "service_repuestos": "Spare Parts",
+        "service_reparaciones": "Structural Repairs",
+        "service_inspecciones": "Inspections and Sales",
+        
+        "video_text_span1": "WHERE ",
+        "video_text_strong1": "PRECISION",
+        "video_text_span2": " AND",
+        "video_text_span3": "",
+        "video_text_strong2": "EXCELLENCE",
+        "video_text_span4": " MEET",
+        "video_cta": "VIEW GALLERY",
+
+        "reviews_title": "Reviews from our customers",
+        "reviews_none": "No reviews available.",
+        "reviews_label": "reviews",
+
+        "brands_title": "Brands",
+
+        "footer_phone_label": "Phone",
+        
+        "popup_facebook": "L'aereo Aircraft Workshop",
+
+        "mant_1": "Annual inspection of turboprop and piston aircraft up to 5700kg",
+        "mant_2": "Intermediate Inspections",
+        "mant_3": "STC Installations",
+        "mant_4": "Complete Avionics Installations and Instrument Panel Modifications",
+        "mant_5": "Structural repairs and modifications",
+        "mant_6": "NDT Services (Non-Destructive Testing)",
+        "avionica_1": "Certification of Altimetric and Pitot Static Systems, RAAC 91.411",
+        "avionica_2": "Certification of ATC Transponder Systems, RAAC 91.413",
+        "motores_1": "Engine Overhaul – Lycoming and Continental",
+        "motores_2": "Magneto Overhaul – TCM / Unison / Slick",
+        "reparaciones_text": "Experts in structural repairs of aircraft with the highest quality and commitment. Our team of engineers, technicians and pilots ensures a reliable service, providing safety and confidence in every flight.",
+        "repuestos_text": "Quality and precision in every part to ensure optimal performance of your aircraft.",
+        "qs_paragraph_1": "A team born from a passion for aeronautics — experienced, committed, and meticulous professionals brought this venture to life, led by its founder Jose Masetti, who constantly encourages us to be the best at what we love.",
+        "qs_paragraph_2": "Engineers, technicians, and pilots form the professional group that drives this organization, providing comprehensive solutions in aircraft maintenance and delivering reliable service to foster customer loyalty.",
+        "qs_title": "Current Organization",
+        "qs_paragraph_3": "Strategically located at Coronel Olmedo Aerodrome in Córdoba with its own facilities, L'AEREO provides maintenance services to aircraft operators across the country. It handles comprehensive maintenance tasks on single and twin-engine aircraft and all their systems and components requiring intervention due to condition, expiry, or flight hours.",
+        "qs_paragraph_4": "L'AEREO is a regional leader, being one of the few service providers in Córdoba qualified for avionics and electrical installations as well as altimetric and pitot-static systems.",
+        "qs_map_title": "MAP",
+        "qs_map_button": "Open map",
+
+        "certifications_title": "Certifications",
+        "cert_1": "Certification of Authorization",
+        "cert_2": "Operating Specifications - Salétite la Cumbre",
+        "cert_3": "Operating Specifications",
+        "cert_4": "Capabilities List REV 0",
+
+        "btn_consultar": "Inquire",
+        "btn_llamar": "Call",
+        "content_breadcrumb_home": "Home",
+
+        "gallery_subtitle": "Our work"
+    }
+  }
+  

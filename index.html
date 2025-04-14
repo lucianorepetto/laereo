@@ -33,26 +33,25 @@
                 <div class="menu">
                     <div class="menu_title"></div>
                     <ul class="ops mini-scroll">
-                        <li class="dropdown" data-section="servicios"><a style="cursor: pointer;">Servicios</a>
-                            <ul class="dropdown-content ">
-                                <li><a href="?page=mantenimiento">Mantenimiento</a></li>
-                                <li><a href="?page=avionica">Aviónica</a></li>
-                                <li><a href="?page=motores">Motores y Accesorios</a></li>
-                                <li><a href="?page=repuestos">Repuestos</a></li>
-                                <li><a href="?page=reparaciones">Reparaciones Estructurales</a></li>
-                                <li><a href="?page=inspecciones">Inspecciones Pre-Compra y Venta de Aeronaves</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="?page=quienes-somos">Quiénes Somos</a></li>
-                        <li><a href="?page=habilitaciones">Habilitaciones</a></li>
-                        <li class="last_child"><a href="?page=galeria">Galería</a></li>
-                        
+                      <li class="dropdown" data-section="servicios"><a style="cursor: pointer;" data-i18n="nav_services">Servicios</a>
+                        <ul class="dropdown-content">
+                          <li><a href="?page=mantenimiento&lang={lang}" data-i18n="nav_mantenimiento">Mantenimiento</a></li>
+                          <li><a href="?page=avionica&lang={lang}" data-i18n="nav_avionica">Aviónica</a></li>
+                          <li><a href="?page=motores&lang={lang}" data-i18n="nav_motores">Motores y Accesorios</a></li>
+                          <li><a href="?page=repuestos&lang={lang}" data-i18n="nav_repuestos">Repuestos</a></li>
+                          <li><a href="?page=reparaciones&lang={lang}" data-i18n="nav_reparaciones">Reparaciones Estructurales</a></li>
+                          <li><a href="?page=inspecciones&lang={lang}" data-i18n="nav_inspecciones">Inspecciones Pre-Compra y Venta de Aeronaves</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="?page=quienes-somos&lang={lang}" data-i18n="nav_about">Quiénes Somos</a></li>
+                      <li><a href="?page=habilitaciones&lang={lang}" data-i18n="nav_certifications">Habilitaciones</a></li>
+                      <li class="last_child"><a href="?page=galeria&lang={lang}" data-i18n="nav_gallery">Galería</a></li>
                     </ul>
-                </div>
+                  </div>                  
                 
             </div>
             <div>
-                <div class="contact-button">Contacto</div>
+                <div class="contact-button" data-i18n="contact">Contacto</div>
             </div>
         </nav>
     </header>
@@ -61,55 +60,71 @@
             <li>
                 <div class="img banner_1" style="background-image: url('./assets/banners/1.webp')">
                 <div class="carousel-text">
-                    <h2 style="padding-bottom: 18px; border-bottom: 1px solid white; margin-bottom: 12px;"><strong>CONFIANZA Y SEGURIDAD OPERACIONAL</strong></h2>
-                    <p>ATENCIÓN PERSONALIZADA EN CADA</p>
-                    <p>SERVICIO DE MANTENIMIENTO</p>
+                    <h2 style="padding-bottom: 18px; border-bottom: 1px solid white; margin-bottom: 12px;"><strong data-i18n="hero_title_1">CONFIANZA Y SEGURIDAD OPERACIONAL</strong></h2>
+                    <p data-i18n="hero_subtitle_1">ATENCIÓN PERSONALIZADA EN CADA</p>
+                    <p  data-i18n="hero_serv_mant">SERVICIO DE MANTENIMIENTO</p>
                     <div style="display: flex; gap: 20px; margin-top: 10px;">
-                        <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><div class="btn">CONTACTAR</div></a>
+                        <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><div class="btn"  data-i18n="hero_cta">CONTACTAR</div></a>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="img banner_1" style="background-image: url('./assets/banners/2.webp')">
-                <div class="carousel-text" style="align-items: flex-start; top: 50%; left: 10%; transform: translate(0, -50%);">
-                    <h2 style="padding-bottom: 10px;"><strong>INSTALACIÓN Y VENTA DE AVIÓNICA</strong></h2>
-                    <p>SERVICIO LÍDER EN LA REGIÓN</p>
+                  <div class="carousel-text" style="align-items: flex-start; top: 50%; left: 10%; transform: translate(0, -50%);">
+                    <h2 style="padding-bottom: 10px;"><strong data-i18n="banner_avionica_title">INSTALACIÓN Y VENTA DE AVIÓNICA</strong></h2>
+                    <p data-i18n="banner_avionica_text">SERVICIO LÍDER EN LA REGIÓN</p>
                     <div style="display: flex; gap: 20px; margin-top: 10px;">
-                        <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><div class="btn">CONSULTAR</div></a>
+                      <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank">
+                        <div class="btn" data-i18n="banner_avionica_cta">CONSULTAR</div>
+                      </a>
                     </div>
-                </div>
-            </li>
-            <li>
+                  </div>
+              </li>
+              
+              <li>
                 <div class="img banner_3" style="background-image: url('./assets/banners/3.webp')">
-                    <div class="carousel-text" style="align-items: flex-start; top: 50%; left: 10%; transform: translate(0, -50%);">
-                        <p>INSPECCIONES PRE-COMPRA Y VENTA</p>
-                        <h2><strong>DE AERONAVES</strong></h2>
-                        <p>CONSULTE POR ASESORAMIENTO PERSONALIZADO</p>
-                        <div style="display: flex; gap: 20px; margin-top: 10px;">
-                            <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><div class="btn">MÁS INFO</div></a>
-                        </div>
-                    </div>
-            </li>
-            <li>
-                <div class="img banner_4" style="background-image: url('./assets/banners/4.webp')">
-                <div class="carousel-text" style="align-items: flex-start; top: 80%; left: 10%; transform: translate(0, -50%);">
-                    <h2 style="padding-bottom: 18px; border-bottom: 1px solid white; margin-bottom: 12px;"><strong>DOS TALLERES HABILITADOS</strong></h2>
-                    <p>PARA BRINDAR MEJORES SOLUCIONES LOGÍSTICAS</p>
+                  <div class="carousel-text" style="align-items: flex-start; top: 50%; left: 10%; transform: translate(0, -50%);">
+                    <p data-i18n="banner_inspecciones_line1">INSPECCIONES PRE-COMPRA Y VENTA</p>
+                    <h2><strong data-i18n="banner_inspecciones_title">DE AERONAVES</strong></h2>
+                    <p data-i18n="banner_inspecciones_text">CONSULTE POR ASESORAMIENTO PERSONALIZADO</p>
                     <div style="display: flex; gap: 20px; margin-top: 10px;">
-                        <a href="https://maps.app.goo.gl/ybgRbLE8B3thMZZ7A" target="_blank"><div class="btn">VER UBICACIÓN</div></a>
+                      <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank">
+                        <div class="btn" data-i18n="banner_inspecciones_cta">MÁS INFO</div>
+                      </a>
                     </div>
-                </div>
-            </li>
-            <li>
+                  </div>
+              </li>
+              
+              <li>
+                <div class="img banner_4" style="background-image: url('./assets/banners/4.webp')">
+                  <div class="carousel-text" style="align-items: flex-start; top: 80%; left: 10%; transform: translate(0, -50%);">
+                    <h2 style="padding-bottom: 18px; border-bottom: 1px solid white; margin-bottom: 12px;">
+                      <strong data-i18n="banner_talleres_title">DOS TALLERES HABILITADOS</strong>
+                    </h2>
+                    <p data-i18n="banner_talleres_text">PARA BRINDAR MEJORES SOLUCIONES LOGÍSTICAS</p>
+                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                      <a href="https://maps.app.goo.gl/ybgRbLE8B3thMZZ7A" target="_blank">
+                        <div class="btn" data-i18n="banner_talleres_cta">VER UBICACIÓN</div>
+                      </a>
+                    </div>
+                  </div>
+              </li>
+              
+              <li>
                 <div class="img banner_5" style="background-image: url('./assets/banners/5.webp')">
-                    <div class="carousel-text" style="top: 60%;">
-                        <h2 class="mant_h2" style="padding-bottom: 10px;"><strong>MANTENIMIENTO GENERAL PARA SU AERONAVE</strong></h2>
-                        <p>CONSULTE POR NUESTROS SERVICIOS PERSONALIZADOS</p>
-                        <div style="display: flex; gap: 20px; margin-top: 10px;">
-                            <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><div class="btn">CONTACTAR</div></a>
-                        </div>
+                  <div class="carousel-text" style="top: 60%;">
+                    <h2 class="mant_h2" style="padding-bottom: 10px;">
+                      <strong data-i18n="banner_mantenimiento_title">MANTENIMIENTO GENERAL PARA SU AERONAVE</strong>
+                    </h2>
+                    <p data-i18n="banner_mantenimiento_text">CONSULTE POR NUESTROS SERVICIOS PERSONALIZADOS</p>
+                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                      <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank">
+                        <div class="btn" data-i18n="banner_mantenimiento_cta">CONTACTAR</div>
+                      </a>
                     </div>
-            </li>
+                  </div>
+              </li>
+              
         </ul>
         <div class="carousel-controls">
             <span class="prev"><i class="fas fa-chevron-left"></i></span>
@@ -121,39 +136,46 @@
 
     
     <div class="content">
-        <div class="services-section">
+        <div class="services-section"> 
             <h2 class="xp">
-                MÁS DE 25 AÑOS
-                <strong>DE EXPERIENCIA INTERNACIONAL</strong>
-                EN MANTENIMIENTO AERONÁUTICO
+                <span data-i18n="home_experience_span1">MÁS DE 25 AÑOS</span>
+                <strong data-i18n="home_experience_strong">DE EXPERIENCIA INTERNACIONAL</strong>
+                <span data-i18n="home_experience_span2">EN MANTENIMIENTO AERONÁUTICO</span>
             </h2>
-            <h3 style="margin-top: 30px; text-align: left;font-style: oblique">Servicios</h3>
+            <h3 style="margin-top: 30px; text-align: left;font-style: oblique" data-i18n="home_services_heading">Servicios</h3>
             <div class="services-icons">
-                <a href="?page=mantenimiento" class="service-item"><img src="./assets/home_icons/mantenimiento.svg" alt="Mantenimiento"><p>Mantenimiento</p></a>
-                <a href="?page=avionica"class="service-item"><img src="./assets/home_icons/avionica.svg" alt="Aviónica"><p>Aviónica</p></a>
-                <a href="?page=motores" class="service-item"><img src="./assets/home_icons/motores.svg" alt="Motores"><p>Motores y Accesorios</p></a>
-                <a href="?page=repuestos" class="service-item"><img src="./assets/home_icons/repuestos.svg" alt="Repuestos"><p>Repuestos</p></a>
-                <a href="?page=reparaciones" class="service-item"><img src="./assets/home_icons/reparaciones.svg" alt="Reparaciones"><p>Reparaciones Estructurales</p></a>
-                <a href="?page=inspecciones" class="service-item"><img src="./assets/home_icons/inspecciones.svg" alt="Reparaciones"><p>Inspecciones y Venta</p></a>
+              <a href="?page=mantenimiento" class="service-item"><img src="./assets/home_icons/mantenimiento.svg" alt="Mantenimiento"><p data-i18n="service_mantenimiento">Mantenimiento</p></a>
+              <a href="?page=avionica" class="service-item"><img src="./assets/home_icons/avionica.svg" alt="Aviónica"><p data-i18n="service_avionica">Aviónica</p></a>
+              <a href="?page=motores" class="service-item"><img src="./assets/home_icons/motores.svg" alt="Motores"><p data-i18n="service_motores">Motores y Accesorios</p></a>
+              <a href="?page=repuestos" class="service-item"><img src="./assets/home_icons/repuestos.svg" alt="Repuestos"><p data-i18n="service_repuestos">Repuestos</p></a>
+              <a href="?page=reparaciones" class="service-item"><img src="./assets/home_icons/reparaciones.svg" alt="Reparaciones"><p data-i18n="service_reparaciones">Reparaciones Estructurales</p></a>
+              <a href="?page=inspecciones" class="service-item"><img src="./assets/home_icons/inspecciones.svg" alt="Reparaciones"><p data-i18n="service_inspecciones">Inspecciones y Venta</p></a>
             </div>
             <div class="images-section">
-                <div class="video_container">
-                    <video src="./assets/videos/home_video.mp4" autoplay loop muted playsinline></video>
-                    <div class="text">
-                        <div>DONDE LA <strong>PRESICIÓN</strong> Y</div>
-                        <div>LA <strong>EXCELENCIA</strong> SE ENCUENTRAN</div>
-                        <a href="?page=galeria"><div class="btn">VER GALERÍA</div></a>
+              <div class="video_container">
+                <video src="./assets/videos/home_video.mp4" autoplay loop muted playsinline></video>
+                <div class="text">
+                    <div>
+                      <span data-i18n="video_text_span1">DONDE LA </span>
+                      <strong data-i18n="video_text_strong1">PRESICIÓN</strong>
+                      <span data-i18n="video_text_span2"> Y</span>
                     </div>
-                    
-                </div>
-                
-                </video>
-
+                    <div>
+                      <span data-i18n="video_text_span3">LA </span>
+                      <strong data-i18n="video_text_strong2">EXCELENCIA</strong>
+                      <span data-i18n="video_text_span4">SE ENCUENTRAN</span>
+                    </div>
+                    <a href="?page=galeria">
+                      <div class="btn" data-i18n="video_cta">VER GALERÍA</div>
+                    </a>
+                  </div>
+              </div>
             </div>
         </div>
+          
 
         <div class="google-reviews">
-            <h2>Reseñas de nuestros clientes</h2>
+            <h2 data-i18n="reviews_title">Reseñas de nuestros clientes</h2>
             <div style="display: flex;align-items: center;gap: 0 40px;flex-wrap: wrap; justify-content: center;">
                 <div class="summary"></div>
                 <div class="container mini-scroll-horizontal"></div>
@@ -169,14 +191,14 @@
             <span class="close-popup">&times;</span>
             <div style="display: flex; align-items: center; gap: 7px;">
                 <img src="./assets/icons/contactos.svg" width="15px"/>
-                <h3>Contacto</h3>
+                <h3 data-i18n="contact">Contacto</h3>
             </div>
             
             <div class="contact-info">
                 <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><p><img src="./assets/icons/wpp.svg" width="20px"/> Whatsapp</p></a>
                 <a href="tel:+543541548995"><p><img src="./assets/icons/telefono.svg" width="20px"/> +54 3541 54-8995</p></a>
                 <a href="mailto:tarlaereo@gmail.com"><p><img src="./assets/icons/mail.svg" width="20px"/> tarlaereo@gmail.com</p></a>
-                <a href="https://www.facebook.com/LaereoTallerAeronautico" target="_blank"><p><img src="./assets/icons/facebook.svg" width="20px"/> L'aereo Taller Aeronáutico</p></a>
+                <a href="https://www.facebook.com/LaereoTallerAeronautico" target="_blank"><p><img src="./assets/icons/facebook.svg" width="20px"/><span data-i18n="popup_facebook"> L'aereo Taller Aeronáutico</span></p></a>
                 <a href="https://www.instagram.com/tarlaereo" target="_blank"><p><img src="./assets/icons/insta.svg" width="20px"/> @tarlaereo</p></a>
             </div>
         </div>
@@ -197,9 +219,20 @@
             </div>
             <div class="lateral">
                 <div class="btn-group">
-                    <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank"><div class="btn black consultar"><img src="./assets/icons/wpp.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> Consultar</div></a>
-                    <a href="tel:+543541548995"><div class="btn black llamar"><img src="./assets/icons/telefono.svg" width="20px" height="20px" style="flex: 0 0 20px;"/> Llamar</div></a>
-                </div>
+                    <a href="https://api.whatsapp.com/send?phone=5493541548995" target="_blank">
+                      <div class="btn black consultar">
+                        <img src="./assets/icons/wpp.svg" width="20px" height="20px" style="flex: 0 0 20px;"/>
+                        <span data-i18n="btn_consultar">Consultar</span>
+                      </div>
+                    </a>
+                    <a href="tel:+543541548995">
+                      <div class="btn black llamar">
+                        <img src="./assets/icons/telefono.svg" width="20px" height="20px" style="flex: 0 0 20px;"/>
+                        <span data-i18n="btn_llamar">Llamar</span>
+                      </div>
+                    </a>
+                  </div>
+                  
                 <img class="lateral-img"  width="260px" style="margin-bottom: 50px;">
             </div>
         </div>
@@ -208,90 +241,91 @@
         <div id="inner-content"></div>
     </div>
 
-
     <div class="mantenimiento" style="display: none;">
         <div class="card-container">
-            <div class="card"><strong>Inspección anual</strong> de aeronaves Turbohélices y Pistón hasta <strong>5700kg</strong></div>
-            <div class="card"><strong>Inspecciones Intermedias</strong></div>
-            <div class="card"><strong>Instalaciones de STC</strong></div>
-            <div class="card"><strong>Instalaciones</strong> de Integrales de Aviónica y <strong>Reformas</strong> de Paneles de Instrumentos</div>
-            <div class="card"><strong>Reparaciones y reformas estructurales</strong></div>
-            <div class="card"><strong>Servicios de NDT</strong> (Ensayos no Destructivos)</div>
-          </div>
-    </div>
-    <div class="avionica" style="display: none;">
+          <div class="card" data-i18n="mant_1"><strong>Inspección anual</strong> de aeronaves Turbohélices y Pistón hasta <strong>5700kg</strong></div>
+          <div class="card" data-i18n="mant_2"><strong>Inspecciones Intermedias</strong></div>
+          <div class="card" data-i18n="mant_3"><strong>Instalaciones de STC</strong></div>
+          <div class="card" data-i18n="mant_4"><strong>Instalaciones</strong> de Integrales de Aviónica y <strong>Reformas</strong> de Paneles de Instrumentos</div>
+          <div class="card" data-i18n="mant_5"><strong>Reparaciones y reformas estructurales</strong></div>
+          <div class="card" data-i18n="mant_6"><strong>Servicios de NDT</strong> (Ensayos no Destructivos)</div>
+        </div>
+      </div>
+      <div class="avionica" style="display: none;">
         <div class="card-container">
-            <div class="card"><strong>Certificación</strong> de Sistemas Altimétricos y Pitot Estática, <strong>RAAC 91.411</strong></div>
-            <div class="card"><strong>Certificación</strong> de Sistemas Transponder ATC, <strong>RAAC 91.413</strong></div>
-          </div>
-    </div>
-    <div class="motores" style="display: none;">
+          <div class="card" data-i18n="avionica_1"><strong>Certificación</strong> de Sistemas Altimétricos y Pitot Estática, <strong>RAAC 91.411</strong></div>
+          <div class="card" data-i18n="avionica_2"><strong>Certificación</strong> de Sistemas Transponder ATC, <strong>RAAC 91.413</strong></div>
+        </div>
+      </div>
+      <div class="motores" style="display: none;">
         <div class="card-container">
-            <div class="card"><strong>Overhaul de Motores</strong> Lycoming y Continental</div>
-            <div class="card"><strong>Overhaul de Magnetos</strong> TCM / Unison / Slick</div>
-          </div>
-    </div>
-    <div class="reparaciones" style="display: none;">
-        <div style="margin-top: 30px;">Especialistas en reparaciones estructurales de aeronaves con la más alta calidad y compromiso. Nuestro equipo de ingenieros, técnicos y pilotos garantiza un servicio confiable, asegurando seguridad y confianza en cada vuelo.</div>
-    </div>
-
-    <div class="repuestos" style="display: none;">
-        <div style="margin-top: 30px;">Calidad y precisión en cada pieza para garantizar el óptimo rendimiento de tu aeronave.</div>
-    </div>
-
-    <div class="quienes-somos" style="display: none;">
+          <div class="card" data-i18n="motores_1"><strong>Overhaul de Motores</strong> Lycoming y Continental</div>
+          <div class="card" data-i18n="motores_2"><strong>Overhaul de Magnetos</strong> TCM / Unison / Slick</div>
+        </div>
+      </div>
+      <div class="reparaciones" style="display: none;">
+        <div style="margin-top: 30px;" data-i18n="reparaciones_text">Especialistas en reparaciones estructurales de aeronaves con la más alta calidad y compromiso. Nuestro equipo de ingenieros, técnicos y pilotos garantiza un servicio confiable, asegurando seguridad y confianza en cada vuelo.</div>
+      </div>
+      <div class="repuestos" style="display: none;">
+        <div style="margin-top: 30px;" data-i18n="repuestos_text">Calidad y precisión en cada pieza para garantizar el óptimo rendimiento de tu aeronave.</div>
+      </div>
+      <div class="quienes-somos" style="display: none;">
         <br/>
-        <p>Un equipo de trabajo nacido desde la base de la pasión por la <strong>aeronáutica</strong>, profesionales experimentados, comprometidos y meticulosos dieron vida a este emprendimiento encabezado por su fundador Jose Masetti, quien alienta constantemente en ser los mejores haciendo lo que nos gusta.</p>
-        
-        <p><strong>Ingenieros, técnicos y pilotos</strong> forman el grupo profesional que da vida a esta organización, brindando soluciones integrales en el mantenimiento de aeronaves, entregando un servicio confiable asegurando la <strong>fidelización de los clientes.</strong></p>
+        <p data-i18n="qs_paragraph_1">Un equipo de trabajo nacido desde la base de la pasión por la <strong>aeronáutica</strong>, profesionales experimentados, comprometidos y meticulosos dieron vida a este emprendimiento encabezado por su fundador Jose Masetti, quien alienta constantemente en ser los mejores haciendo lo que nos gusta.</p>
+        <p data-i18n="qs_paragraph_2"><strong>Ingenieros, técnicos y pilotos</strong> forman el grupo profesional que da vida a esta organización, brindando soluciones integrales en el mantenimiento de aeronaves, entregando un servicio confiable asegurando la <strong>fidelización de los clientes.</strong></p>
         <br/>
-        <h3>Organización Actual</h3>
+        <h3 data-i18n="qs_title">Organización Actual</h3>
         <br/>
-        <p>Ubicados estratégicamente en el <strong>aeródromo Coronel Olmedo,</strong> ciudad de <strong>Córdoba</strong> con instalaciones propias, <strong>L'AEREO</strong> brinda servicios de mantenimiento a operadoras de aeronaves de todo el país, logrando una variada y repetitiva demanda de servicios, realizando tareas integrales de mantenimiento en aeronaves monomotores, bimotores y de todos sus sistemas y componentes que requieran intervención por condición, vencimiento u horas de vuelo.</p>
-        
-        <p><strong>L'AEREO es líder en la región</strong> por ser uno de los pocos proveedores cordobeses de servicios de instalación de aviónica y eléctricos, como así también con capacidades para sistemas altimétricos y de pitot estática.</p>
-        
+        <p data-i18n="qs_paragraph_3">Ubicados estratégicamente en el <strong>aeródromo Coronel Olmedo,</strong> ciudad de <strong>Córdoba</strong> con instalaciones propias, <strong>L'AEREO</strong> brinda servicios de mantenimiento a operadoras de aeronaves de todo el país, logrando una variada y repetitiva demanda de servicios, realizando tareas integrales de mantenimiento en aeronaves monomotores, bimotores y de todos sus sistemas y componentes que requieran intervención por condición, vencimiento u horas de vuelo.</p>
+        <p data-i18n="qs_paragraph_4"><strong>L'AEREO es líder en la región</strong> por ser uno de los pocos proveedores cordobeses de servicios de instalación de aviónica y eléctricos, como así también con capacidades para sistemas altimétricos y de pitot estática.</p>
         <br/>
-        <h3>MAPA</h3>
+        <h3 data-i18n="qs_map_title">MAPA</h3>
         <br/>
         <div class="map-container">
-            <button class="btn black" onclick="window.open('https://maps.app.goo.gl/gmdwg2ZoBrCFqoBx9?g_st=ic', '_blank')">Abrir mapa</button>
-            <br/>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4186.399680920937!2d-64.14800362438972!3d-31.48897632422843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1saer%C3%B3dromo%20Coronel%20Olmedo%2C%20C%C3%B3rdoba!5e1!3m2!1sen!2sar!4v1738860656041!5m2!1sen!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
-            
+          <button class="btn black" onclick="window.open('https://maps.app.goo.gl/gmdwg2ZoBrCFqoBx9?g_st=ic', '_blank')" data-i18n="qs_map_button">Abrir mapa</button>
+          <br/>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4186.399680920937!2d-64.14800362438972!3d-31.48897632422843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1saer%C3%B3dromo%20Coronel%20Olmedo%2C%20C%C3%B3rdoba!5e1!3m2!1sen!2sar!4v1738860656041!5m2!1sen!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+
+    <div class="habilitaciones" style="display: none;"> 
+        <h2 data-i18n="certifications_title">Habilitaciones</h2>
+        <div class="card-container">
+            <a href="./assets/services/habilitaciones/IF-2024-120344957-APN-DNSO-ANAC.pdf" target="_blank">
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                <strong data-i18n="cert_1">Certificado de Habilitación</strong>
+                <img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+            </div>
+            </a>
+            <a href="./assets/services/habilitaciones/IF-2024-120654977-APN-DNSO-ANAC.pdf" target="_blank">
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                <div data-i18n="cert_2"><strong>Especificaciones de Operación</strong> - Salétite la Cumbre</div>
+                <img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+            </div>
+            </a>
+            <a href="./assets/services/habilitaciones/IF-2024-94241233-APN-DNSO-ANAC.pdf" target="_blank">
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                <strong data-i18n="cert_3">Especificaciones de Operación</strong>
+                <img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+            </div>
+            </a>
+            <a href="./assets/services/habilitaciones/LISTA DE CAPACIDADES REV 0.pdf" target="_blank">
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                <strong data-i18n="cert_4">Lista de Capacidades REV 0</strong>
+                <img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
+            </div>
+            </a>
         </div>
     </div>
-
-    <div class="habilitaciones" style="display: none;">
-        <h2>Habilitaciones</h2>
-        <div class="card-container">
-            <a href="./assets/services/habilitaciones/IF-2024-120344957-APN-DNSO-ANAC.pdf" target="_blank"><div class="card"
-                style="display: flex; justify-content: space-between; align-items: center;">
-            <strong>Certificado de Habilitación</strong>
-            <img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
-        </div></a>
-            <a href="./assets/services/habilitaciones/IF-2024-120654977-APN-DNSO-ANAC.pdf" target="_blank"><div class="card"
-                style="display: flex; justify-content: space-between; align-items: center;">
-            <div><strong>Especificaciones de Operación</strong> - Salétite la Cumbre</div><img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
-        </div></a>
-            <a href="./assets/services/habilitaciones/IF-2024-94241233-APN-DNSO-ANAC.pdf" target="_blank"><div class="card"
-                style="display: flex; justify-content: space-between; align-items: center;">
-            <strong>Especificaciones de Operación</strong><img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
-        </div></a>
-            <a href="./assets/services/habilitaciones/LISTA DE CAPACIDADES REV 0.pdf" target="_blank"><div class="card"
-                style="display: flex; justify-content: space-between; align-items: center;">
-            <strong>Lista de Capacidades REV 0</strong><img src="./assets/icons/ojo.svg" width="20px" height="20px"/>
-        </div></a>
-          </div>
-    </div>
-
+      
+      
     <div id="content-galeria" style="display: none;">
         <div class="galeria"></div>
     </div>
 
     <div class="marcas">
-        <h2>Marcas</h2>
+        <h2 data-i18n="brands_title">Marcas</h2>
         <div class="background">
             <div class="container mini-scroll-horizontal">
                 <img src="./assets/marcas/BEECHCRAFT.webp">
@@ -327,7 +361,7 @@
                 <a href="tel:+543541548995">
                     <img src="./assets/icons/telefono.svg" width="20px" height="20px" alt="Teléfono">
                     <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                        <div style="font-weight: bold;">Teléfono</div>
+                        <div style="font-weight: bold;" data-i18n="footer_phone_label">Teléfono</div>
                         <div>+54 3541 54-8995</div>
                     </div>
                 </a>
@@ -557,18 +591,16 @@
         let isScrolling = false; 
 
         function loadContent(page) {
-            
-            
             const contentMap = {
-                'mantenimiento': { title: 'Mantenimiento', bread: 'Servicios', banner: 9, lateral: true},
-                'avionica': { title: 'Aviónica', bread: 'Servicios', banner: 6, lateral: true},
-                'motores': { title: 'Motores y Accesorios', bread: 'Servicios', banner: 6, lateral: true},
-                'repuestos': { title: 'Repuestos', bread: 'Servicios', banner: './assets/services/repuestos/1.webp', lateral: 1},
-                'reparaciones': { title: 'Reparaciones Estructurales', bread: 'Servicios', banner: 8, lateral: true},
-                'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', bread: 'Servicios', banner: 6, lateral: true},
-                'quienes-somos': { title: 'Quiénes Somos', banner: 5, lateral: true},
-                'habilitaciones': { title: 'Habilitaciones'},
-                'galeria': { title: 'Galería', subtitle: 'Nuestros trabajos'}
+                'mantenimiento': { title: 'Mantenimiento', t: 'nav_mantenimiento', bread: 'Servicios', bread_t: 'nav_services', banner: 9, lateral: true},
+                'avionica': { title: 'Aviónica', t: 'nav_avionica', bread: 'Servicios', bread_t: 'nav_services', banner: 6, lateral: true},
+                'motores': { title: 'Motores y Accesorios', t: '', bread: 'Servicios', bread_t: 'nav_services', banner: 6, lateral: true},
+                'repuestos': { title: 'Repuestos', t: 'nav_motores', bread: 'Servicios', bread_t: 'nav_services', banner: './assets/services/repuestos/1.webp', lateral: 1},
+                'reparaciones': { title: 'Reparaciones Estructurales', t: 'nav_reparaciones', bread: 'Servicios', bread_t: 'nav_services', banner: 8, lateral: true},
+                'inspecciones': { title: 'Inspecciones Pre-Compra y Venta de Aeronaves', t: 'nav_inspecciones', bread: 'Servicios', bread_t: 'nav_services', banner: 6, lateral: true},
+                'quienes-somos': { title: 'Quiénes Somos', t: 'nav_about', banner: 5, lateral: true},
+                'habilitaciones': { title: 'Habilitaciones', t: 'nav_certifications'},
+                'galeria': { title: 'Galería', t: 'nav_gallery', subtitle: 'Nuestros trabajos', subtitle_t: 'gallery_subtitle'}
             };
 
             if (contentMap[page]) {
@@ -578,8 +610,15 @@
 
                 $('.header').addClass('scrolled');
                 $('.carousel, .content, .marcas, #content-galeria,#content').hide()
-                $('#section-title').text(contentMap[page].title);
-                $('#breadcrumbs').html('<a style="text-decoration: underline;">Inicio</a> > <span>' + (contentMap[page].bread ? (contentMap[page].bread +' > ') : '') + contentMap[page].title + '</span>');                
+                $('#section-title').text(contentMap[page].title).attr('data-i18n', contentMap[page].t);
+                $('#breadcrumbs').html(`
+                <a style="text-decoration: underline;" data-i18n="content_breadcrumb_home">${contentMap[page].bread}</a> 
+                > <span>
+                    ${contentMap[page].bread ? `<span data-i18n='${contentMap[page].bread_t}'>${contentMap[page].bread}</span> > ` : ''}
+                    <span data-i18n='${contentMap[page].t}'>${contentMap[page].title}</span>
+                </span>
+                `);
+
                 
 
                 if(contentMap[page].banner){
@@ -670,7 +709,7 @@
                     $('#content-galeria').show().empty().append(
                         $('#section-title').clone(),
                         bread = $('#breadcrumbs').clone(),    
-                        $('<div>', {class:'subtitle', text: contentMap[page].subtitle}),
+                        $('<div>', {class:'subtitle', text: contentMap[page].subtitle, 'data-i18n': contentMap[page].subtitle_t}),
                         $('<div>', {class: 'galeria'})
                     )
 
@@ -699,6 +738,8 @@
                     
                 }
             }
+
+            setLang()
         }
 
         
@@ -706,7 +747,11 @@
         $('nav a').not('.contact-info a').click(function(e){
             e.preventDefault();
             const href = $(this).attr('href');
-            const page = href.split('=')[1];
+            let page = href.split('page=')[1];
+            if (page.includes('&')){
+                page = page.split('&')[0]
+            }
+            
             if (page) {
                 history.pushState({}, '', href);
                 loadContent(page);
@@ -727,8 +772,32 @@
     });
 
     function goHome() {
-        window.location.href = window.location.pathname;
+        const pathname = window.location.pathname;
+        const searchParams = new URLSearchParams(window.location.search);
+
+        // Detectar si el path contiene /es o /en
+        const pathLang = pathname.split('/')[1];
+        const validLangs = ['es', 'en'];
+
+        // Detectar si hay un ?lang=es o ?lang=en
+        const queryLang = searchParams.get('lang');
+
+        let redirectUrl;
+
+        if (validLangs.includes(pathLang)) {
+            // Si ya está en /es o /en, redirigir manteniendo esa parte
+            redirectUrl = `/${pathLang}`;
+        } else if (validLangs.includes(queryLang)) {
+            // Si tiene ?lang=es o ?lang=en
+            redirectUrl = `${window.location.pathname.split('?')[0]}?lang=${queryLang}`;
+        } else {
+            // Por defecto, ir a /es
+            redirectUrl = '/es';
+        }
+
+        window.location.href = redirectUrl;
     }
+
 
     $('.carousel ul li').each(()=>{
         $('.progress-bars').append(
@@ -750,7 +819,7 @@
                     const starCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
     
                     if (!reviews || reviews.length === 0) {
-                        $reviewsContainer.append('<p>No hay reseñas disponibles.</p>');
+                        $reviewsContainer.append('<p data-i18n="reviews_none">No hay reseñas disponibles.</p>');
                         return;
                     }
     
@@ -819,7 +888,7 @@
                                 <div class="qxPNJf"></div>
                                 <div class="qxPNJf pCqY8"></div>
                             </div>
-                            <div class="fontBodySmall">${totalReviews} reseñas</div>
+                            <div class="fontBodySmall">${totalReviews} <span data-i18n="reviews_label">reseñas</span></div>
                         </div>
                     </div>`;
     
@@ -891,5 +960,37 @@
         
     </script>
     <script src="./scripts/galeria.js"></script>
+    <script>
+        let lang
+        let t = {};
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const urlParams = new URLSearchParams(window.location.search);
+            const pathLang = window.location.pathname.split('/')[1];
+            const queryLang = urlParams.get('lang');
+            lang = ['es', 'en'].includes(queryLang) ? queryLang : (['es', 'en'].includes(pathLang) ? pathLang : 'es');
+        
+            fetch('/lang.json')
+            .then(res => res.json())
+            .then(data => {
+                t = data[lang];
+                setLang()
+            });
+           
+        })
+
+        function setLang(){
+            console.log(lang, t);
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] || t[key] == '') el.innerText = t[key];
+            });
+
+            document.querySelectorAll('a[href*="{lang}"]').forEach(link => {
+                const href = link.getAttribute('href');
+                link.setAttribute('href', href.replace('{lang}', lang));
+            });
+        }
+    </script>
 </body>
 </html>
