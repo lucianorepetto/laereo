@@ -47,7 +47,8 @@
                       <li><a href="?page=habilitaciones&lang={lang}" data-i18n="nav_certifications">Habilitaciones</a></li>
                       <li class="last_child"><a href="?page=galeria&lang={lang}" data-i18n="nav_gallery">Galería</a></li>
                     </ul>
-                  </div>                  
+                    <div class="contact-button mobile" data-i18n="contact">Contacto</div>
+                </div>                  
                 
             </div>
             <div>
@@ -58,9 +59,7 @@
                       <i class="change_color fas fa-chevron-down" style="font-size: 10px; color: white;"></i>
                     </div>
                   
-                    <div id="lang-menu" style="position: absolute; top: 100%; left: 0; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 10px; display: none;
-                    margin-top: 10px;
-                    width: 141px;">
+                    <div id="lang-menu" style="position: absolute; top: 100%; left: 50%; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 10px; display: none; margin-top: 10px; transform: translateX(-50%); width: 141px;">
                       <p style="margin: 0 0 10px;">Selecciona Idioma:</p>
                       <div onclick="changeLanguage('es')" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; cursor: pointer; padding: 5px 0;">
                         <img class="not_change_color" src="./assets/icons/es.webp" style="width: 20px;" />
@@ -72,7 +71,7 @@
                       </div>
                     </div>
                   </div>
-                <div class="contact-button" data-i18n="contact">Contacto</div>
+                <div class="contact-button not_mob" data-i18n="contact">Contacto</div>
             </div>
         </nav>
     </header>

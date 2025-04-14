@@ -774,6 +774,10 @@ body.dont-scroll {
         position: sticky;
     }
 
+    #language-selector{
+        margin-right: 70px;
+    }
+
     .contact-info.mobile a{
         width: calc(100% - 40px);
     }
@@ -808,8 +812,8 @@ body.dont-scroll {
         display: block !important;
     }
 
-    .contact-button{
-        margin-right: 70px !important;
+    .contact-button.mobile{
+        margin: 20px auto !important;
     }
 
     .video_container .text{
